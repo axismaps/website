@@ -34,6 +34,18 @@ hr{
 	box-shadow: 2px 0px 3px rgba(0,0,0,0.25);
 }
 
+.data:hover{
+	color: #c27c7c;
+}
+
+.design:hover{
+	color: #8b92b2;
+}
+
+.code:hover{
+	color: #82a07c;
+}
+
 /* HEADER */
 #header{
 	padding: 10px 0;
@@ -335,7 +347,6 @@ li.current, li.current:hover{
 }
 
 .horizontal .graphic{
-	color: #404040;
 	font-weight: bold;
 	font-size: 30px;
 	line-height: 85px;
@@ -364,12 +375,20 @@ li.current, li.current:hover{
 	font-weight: bold;
 	line-height: 11px;
 	cursor: pointer;
-	background: url(expand.png) right top no-repeat;
+	visibility: hidden;
 }
 
 .expand:hover{
 	background-position-y: bottom;
 	color: black;
+}
+
+.expand span{
+	font-size: 12px;
+}
+
+.explain .horizontal:hover .expand{
+	visibility: visible;
 }
 
 .horizontal .text, .hidden{

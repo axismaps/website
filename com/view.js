@@ -218,7 +218,7 @@ function build_portfolio()
 				$( document.createElement( 'div' ) )
 					.addClass( "featured" )
 					.attr( "id", i )
-					.html( "<p><b>" + items[ i ].title + "</b><br />" + items[ i ].client + "</p>" )
+					.html( "<p><b>" + items[ i ].title + "</b><br /><i>" + items[ i ].client + "</i></p>" )
 					.prepend(
 						$( document.createElement( 'div' ) )
 							.addClass( "big_image" )

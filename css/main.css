@@ -460,44 +460,31 @@ li.current, li.current:hover{
 }
 
 /* PORTFOLIO */
-#portfolio{
-	background-color: white;
-}
-
 #featured{
 	padding-right: 25px;
 }
 
 .featured{
 	float: left;
-	margin: 25px 0 15px 25px;
-	min-width: 160px;
-	width: 448px;
-	height: 270px;
+	margin: 25px 0 75px 25px;
+	width: 289px;
+	height: 205px;
 	border: 1px solid #ddd;
 }
 
 .featured p{
 	display: block;
-	margin: 0;
-	padding: 10px 15px;
-	height: 44px;
-	border-top: 1px solid #ddd;
-	border-bottom: 3px solid #a6a499;
-	background: #f6f5ec url(small_arrow.png) no-repeat right center;
-	background-color: #f6f5ed;
+	margin: 10px 0 0;
 	color: #333;
 	font-size: 16px;
+	text-align: center;
 }
 
 .featured .big_image{
-	width: 100%;
-	height: 205px;
-	background-position: center center;
-	-webkit-box-shadow: inset 0px -2px 3px rgba(0,0,0,0.25);
-	-moz-box-shadow: inset 0px -2px 3px rgba(0,0,0,0.25);
-	box-shadow: inset 0px -2px 3px rgba(0,0,0,0.25);
-
+	height: 185px;
+	background-position: left center;
+	background-size: cover;
+	border: 10px solid white;
 }
 
 #more_button{

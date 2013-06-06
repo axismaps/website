@@ -375,7 +375,12 @@ li.current, li.current:hover{
 	font-weight: bold;
 	line-height: 11px;
 	cursor: pointer;
+	background: url(expand.png) right top no-repeat;
+}
+
+.explain .expand{
 	visibility: hidden;
+	background-image: none;
 }
 
 .expand:hover{

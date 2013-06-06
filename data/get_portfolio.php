@@ -5,11 +5,11 @@
 	
 	if( $_GET[ 'l' ] == "short" )
 	{
-		$query = 'SELECT id, IFNULL( title_short, title ) AS title, IFNULL( client_short, client) AS client, tag, featured FROM portfolio';
+		$query = 'SELECT id, IFNULL( title_short, title ) AS title, IFNULL( client_short, client) AS client, tag, featured FROM projects';
 	}
 	else
 	{
-		$query = 'SELECT id, title, client, tag, featured FROM portfolio';
+		$query = 'SELECT id, title, client, tag, featured FROM projects';
 	}
 	
 	$results = $db->query( $query );

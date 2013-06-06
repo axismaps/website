@@ -56,21 +56,26 @@ function resize_home()
 
 function mini_portfolio()
 {
-	$.getJSON( "data/get_projects.php", function( json )
+	$.getJSON( "data/get_projects.php?l=short", function( json )
 	{
-		for( var i = 0; i < Math.min( 10, json.length ); i++ )
+		var count = 0;
+		for( var i = 0; count < Math.min( 10, json.length ); i++ )
 		{
-			$( "#mini_portfolio" ).append(
-				$( document.createElement( 'div' ) )
-					.addClass( "mini_portfolio" )
-					.attr( "id", i )
-					.html( "<p><b>" + json[ i ].title + "</b> - " + json[ i ].client + "<br /><i>" + json[ i ].tag + "</i></p>" )
-					.prepend(
-						$( document.createElement( 'div' ) )
-							.addClass( "mini_image" )
-							.css( "background-image", "url( data/get_image.php?id=" + json[ i ].id + "&w=70&h=70 )" )
-					)
-			);
+			if( json[ i ].featured )
+			{
+				$( "#mini_portfolio" ).append(
+					$( document.createElement( 'div' ) )
+						.addClass( "mini_portfolio" )
+						.attr( "id", i )
+						.html( "<p><b>" + json[ i ].title + "</b> - " + json[ i ].client + "<br /><i>" + json[ i ].tag + "</i></p>" )
+						.prepend(
+							$( document.createElement( 'div' ) )
+								.addClass( "mini_image" )
+								.css( "background-image", "url( data/get_image.php?id=" + json[ i ].id + "&w=70&h=70 )" )
+						)
+				);
+				count++;
+			}
 		}
 		$( "#mini_portfolio" ).append(
 				$( document.createElement( 'div' ) ).css( "clear", "both" )
@@ -202,36 +207,36 @@ function advance_slide()
 
 function build_portfolio()
 {
-	$.getJSON( "data/portfolio.json", function( json )
+	$.getJSON( "data/get_projects.php", function( json )
 	{
-		var items = json.featured;
-		for( var i in items )
+		for( var i = 0; i < json.length; i++ )
 		{
-			$( "#featured" ).append(
-				$( document.createElement( 'div' ) )
-					.addClass( "featured" )
-					.attr( "id", i )
-					.html( "<p><b>" + items[ i ].title + "</b><br /><i>" + items[ i ].client + "</i></p>" )
-					.prepend(
-						$( document.createElement( 'div' ) )
-							.addClass( "big_image" )
-							.css( "background-image", "url(" + loc + items[ i ].image + ")" )
-					)
-			);
-		}
-		
-		items = json.all;
-		for( var i in items )
-		{
-			$( "#all" ).append(
-				$( document.createElement( 'div' ) )
-					.addClass( "all" )
-					.attr( "id", i )
-					.html( "<p><b>" + items[ i ].title + "</b> - <i>" + items[ i ].client + "</i><br /><br />" + items[ i ].intro + "</p>" )
-					.prepend(
-						$( document.createElement( 'img' ) ).attr( "src", loc + items[ i ].image )
-					)
-			);
+			if( json[ i ].featured )
+			{
+				$( "#featured" ).append(
+					$( document.createElement( 'div' ) )
+						.addClass( "featured" )
+						.attr( "id", i )
+						.html( "<p><b>" + json[ i ].title + "</b><br /><i>" + json[ i ].client + "</i></p>" )
+						.prepend(
+							$( document.createElement( 'div' ) )
+								.addClass( "big_image" )
+								.css( "background-image", "url( data/get_image.php?id=" + json[ i ].id + "&w=265&h=185 )" )
+						)
+				);
+			}
+			else
+			{
+				$( "#all" ).append(
+					$( document.createElement( 'div' ) )
+						.addClass( "all" )
+						.attr( "id", i )
+						.html( "<p><b>" + json[ i ].title + "</b> - <i>" + json[ i ].client + "</i><br /><br />" + json[ i ].intro + "</p>" )
+						.prepend(
+							$( document.createElement( 'img' ) ).attr( "src", "data/get_image.php?id=" + json[ i ].id + "&w=815&h=255" )
+						)
+				);
+			}
 		}
 		
 		$( "#more_button" ).click( function()

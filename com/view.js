@@ -1,5 +1,4 @@
 var counter = 1;
-var loc = "media/images/";
 var skip = false;
 
 function init_events()
@@ -57,55 +56,49 @@ function resize_home()
 
 function mini_portfolio()
 {
-	$.getJSON( "data/portfolio.json", function( json )
+	$.getJSON( "data/get_projects.php", function( json )
 	{
-		var items = json.featured;
-		var count = 0;
-		for( var i in items )
+		for( var i = 0; i < Math.min( 10, json.length ); i++ )
 		{
-			items[ i ].title = items[ i ].title_short ? items[ i ].title_short : items[ i ].title;
-			items[ i ].client = items[ i ].client_short ? items[ i ].client_short : items[ i ].client;
 			$( "#mini_portfolio" ).append(
 				$( document.createElement( 'div' ) )
 					.addClass( "mini_portfolio" )
 					.attr( "id", i )
-					.html( "<p><b>" + items[ i ].title + "</b> - " + items[ i ].client + "<br /><i>" + items[ i ].tag + "</i></p>" )
+					.html( "<p><b>" + json[ i ].title + "</b> - " + json[ i ].client + "<br /><i>" + json[ i ].tag + "</i></p>" )
 					.prepend(
 						$( document.createElement( 'div' ) )
 							.addClass( "mini_image" )
-							.css( "background-image", "url(" + loc + items[ i ].image + ")" )
+							.css( "background-image", "url( data/get_image.php?id=" + json[ i ].id + "&w=70&h=70 )" )
 					)
 			);
-			count++;
-			if( count >= 10 ) break;
 		}
 		$( "#mini_portfolio" ).append(
 				$( document.createElement( 'div' ) ).css( "clear", "both" )
 		);
 		
-		build_slideshow( $.extend( items, json.all ) );
+		build_slideshow( json );
 	});
 }
 
-function build_slideshow( portfolio )
+function build_slideshow( p )
 {
-	$.each( portfolio, function( key, value )
+	for( var i = 0; i < p.length; i++ )
 	{
 		$( "#slides" )
 			.append(
 				$( document.createElement( 'div' ) )
-					.attr( "id", key )
+					.attr( "id", p[ i ].id )
 					.addClass( "slide" )
 					.append(
-						$( document.createElement( 'img' ) ).attr( "src", loc + value.image )
+						$( document.createElement( 'img' ) ).attr( "src", "data/get_image.php?id=" + p[ i ].id )
 					)
 					.append(
 						$( document.createElement( 'div' ) )
 							.addClass( "title" )
-							.html( value.title )
+							.html( p[ i ].title )
 					)
 			)
-	});
+	}
 	$( "#slideshow" )
 		.mouseenter( function()
 		{

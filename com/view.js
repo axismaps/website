@@ -56,7 +56,7 @@ function resize_home()
 
 function mini_portfolio()
 {
-	$.getJSON( "data/get_projects.php?l=short", function( json )
+	$.getJSON( "data/get_portfolio.php?l=short", function( json )
 	{
 		var count = 0;
 		for( var i = 0; count < Math.min( 10, json.length ); i++ )
@@ -207,7 +207,7 @@ function advance_slide()
 
 function build_portfolio()
 {
-	$.getJSON( "data/get_projects.php", function( json )
+	$.getJSON( "data/get_portfolio.php", function( json )
 	{
 		for( var i = 0; i < json.length; i++ )
 		{
@@ -244,5 +244,28 @@ function build_portfolio()
 			$( "#more_button .expand" ).fadeOut();
 			$( "#all" ).slideDown();
 		})
+	});
+}
+
+function build_project( id )
+{
+	$.getJSON( "data/get_project.php?id=" + id, function( json )
+	{
+		$( "#features" ).after( "<br /><h2>" + json.tag + "</h2><p>" + json.intro + "</p><div style='clear:both'></div>" );
+		$( ".ribbon span" ).first().html( json.title );
+		
+		for( var i = 0; i < json.features.length; i++ )
+		{
+			$( "#features" ).append(
+				$( document.createElement( 'div' ) )
+					.addClass( "feature" )
+					.append(
+						$( document.createElement( 'img' ) ).attr( "src", "data/get_feature_image.php?id=" + id + "&n=" + i )
+					)
+					.append( "<p><b>" + json.features[ i ].title + "</b> - " + json.features[ i ].text + "</p>" )
+			);
+		}
+		$( ".feature" ).first().addClass( "shown" );
+		$( ".menu li + li" ).first().addClass( "current" );
 	});
 }

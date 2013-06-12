@@ -2,27 +2,23 @@
 <html>
 	<head>
 		<!-- @include meta.html -->
-		<script type="text/javascript">
-			$( document ).ready( function()
-			{
-				build_portfolio();
-			});
-		</script>
 	</head>
 	<body>
 		<!-- @include header.html -->
 		<div class="content">
 			<!-- @include nav.html -->
 			<div id="portfolio">
-				<div class="ribbon"><span>Featured Maps | <i>See our previous projects and how they were made:</i></span></div>
-				<div id="featured"></div>
-				<div style="clear:both"></div>
-				<div id="more_button">
-					<div class="expand">View more of our work</div>
+				<div class="ribbon"><span></span></div>
+				<div id="intro">
+					<div id="features"></div>
 				</div>
-				<div id="all"></div>
+				<div style="clear:both"></div>
+				<div class="ribbon"><span>How this project came together...</span></div>
 			</div>
 			<!-- @include footer.html -->
 		</div>
 	</body>
+	<script type="text/javascript">
+		build_project( window.location.hash.replace( "#", "" ) );
+	</script>
 </html>

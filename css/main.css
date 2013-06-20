@@ -428,9 +428,6 @@ li.current, li.current:hover{
 	margin: 20px 10px;
 	width: 325px;
 	height: 70px;
-	border: 1px solid #ddd;
-	border-bottom: 3px solid #a6a499;
-	background: #f6f5ec url(small_arrow.png) no-repeat right center;
 	cursor: pointer;
 }
 
@@ -447,11 +444,12 @@ li.current, li.current:hover{
 
 .mini_image{
 	float: left;
-	margin-right: 15px;
+	margin: -5px 10px -5px;
 	width: 70px;
 	height: 70px;
 	background-position: center center;
 	background-size: cover;
+	border: solid #a6a499 2px;
 }
 
 /* PORTFOLIO */

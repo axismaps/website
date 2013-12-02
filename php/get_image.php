@@ -19,8 +19,8 @@
     	
     	$source_w = $dest_w * $factor;
     	$source_h = $dest_h * $factor;
-    	$source_x = ( $row[ 'x' ] + ( $source_w / 2 ) > $w ? $w - $source_w : $row[ 'x' ] - ( $source_w / 2 ) );
-    	$source_y = ( $row[ 'y' ] + ( $source_h / 2 ) > $h ? $h - $source_h : $row[ 'y' ] - ( $source_h / 2 ) );
+    	$source_x = max( $row[ 'x' ] + ( $source_w / 2 ) > $w ? $w - $source_w : $row[ 'x' ] - ( $source_w / 2 ), 0 );
+    	$source_y = max( $row[ 'y' ] + ( $source_h / 2 ) > $h ? $h - $source_h : $row[ 'y' ] - ( $source_h / 2 ), 0 );
     	
 	    $new = imagecreatetruecolor( $dest_w, $dest_h );
 		imagecopyresampled(

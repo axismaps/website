@@ -19,7 +19,7 @@ function webform_submit(){
 	
 		$.ajax({
 			type:	"POST",
-			url:	"data/email.php",
+			url:	"php/email.php",
 			data:	dataString,
 			success:	function(result){
 				$("#web_form").css("height", "230px");

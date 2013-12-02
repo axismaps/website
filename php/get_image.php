@@ -1,6 +1,6 @@
 <?php
 
-	$db = new SQLite3( 'portfolio.sqlite' );
+	include 'db_connect.php';
 	
 	$results = $db->query( 'SELECT * FROM images WHERE id = "' . $_GET[ 'id' ] . '"' );
 	$row = $results->fetchArray( SQLITE3_ASSOC );

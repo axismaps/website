@@ -30,7 +30,7 @@ function get_tweets()
 function get_rss()
 {
 	$.ajax({
-		url : "data/get_blog.php",
+		url : "php/get_blog.php",
 		dataType : "json",
 		success : function( json )
 		{
@@ -49,7 +49,7 @@ function get_rss()
 	});
 	
 	$.ajax({
-		url : "data/get_store.php",
+		url : "php/get_store.php",
 		dataType : "json",
 		success : function( json )
 		{

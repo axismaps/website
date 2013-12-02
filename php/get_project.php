@@ -1,6 +1,6 @@
 <?php
 
-	$db = new SQLite3( 'portfolio.sqlite' );
+	include 'db_connect.php';
 	
 	$features = array();	
 	$results = $db->query( "SELECT title, text FROM features WHERE project = '" . $_GET[ 'id' ] . "' ORDER BY step" );

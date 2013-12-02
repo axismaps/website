@@ -1,7 +1,6 @@
 <?php
 
-	$json = array();
-	$db = new SQLite3( 'portfolio.sqlite' );
+	include 'db_connect.php';
 	
 	if( $_GET[ 'l' ] == "short" )
 	{

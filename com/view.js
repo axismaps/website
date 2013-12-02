@@ -56,7 +56,7 @@ function resize_home()
 
 function mini_portfolio()
 {
-	$.getJSON( "data/get_portfolio.php?l=short", function( json )
+	$.getJSON( "php/get_portfolio.php?l=short", function( json )
 	{
 		var count = 0;
 		for( var i = 0; count < Math.min( 10, json.length ); i++ )
@@ -71,7 +71,7 @@ function mini_portfolio()
 						.prepend(
 							$( document.createElement( 'div' ) )
 								.addClass( "mini_image" )
-								.css( "background-image", "url( data/get_image.php?id=" + json[ i ].id + "&w=70&h=70 )" )
+								.css( "background-image", "url( php/get_image.php?id=" + json[ i ].id + "&w=70&h=70 )" )
 						)
 				);
 				count++;
@@ -95,7 +95,7 @@ function build_slideshow( p )
 					.attr( "id", p[ i ].id )
 					.addClass( "slide" )
 					.append(
-						$( document.createElement( 'img' ) ).attr( "src", "data/get_image.php?id=" + p[ i ].id )
+						$( document.createElement( 'img' ) ).attr( "src", "php/get_image.php?id=" + p[ i ].id )
 					)
 					.append(
 						$( document.createElement( 'div' ) )
@@ -207,7 +207,7 @@ function advance_slide()
 
 function build_portfolio()
 {
-	$.getJSON( "data/get_portfolio.php", function( json )
+	$.getJSON( "php/get_portfolio.php", function( json )
 	{
 		for( var i = 0; i < json.length; i++ )
 		{
@@ -221,7 +221,7 @@ function build_portfolio()
 						.prepend(
 							$( document.createElement( 'div' ) )
 								.addClass( "big_image" )
-								.css( "background-image", "url( data/get_image.php?id=" + json[ i ].id + "&w=265&h=185 )" )
+								.css( "background-image", "url( php/get_image.php?id=" + json[ i ].id + "&w=265&h=185 )" )
 						)
 				);
 			}
@@ -233,7 +233,7 @@ function build_portfolio()
 						.attr( "id", i )
 						.html( "<p><b>" + json[ i ].title + "</b> - <i>" + json[ i ].client + "</i><br /><br />" + json[ i ].intro + "</p>" )
 						.prepend(
-							$( document.createElement( 'img' ) ).attr( "src", "data/get_image.php?id=" + json[ i ].id + "&w=815&h=255" )
+							$( document.createElement( 'img' ) ).attr( "src", "php/get_image.php?id=" + json[ i ].id + "&w=815&h=255" )
 						)
 				);
 			}
@@ -249,7 +249,7 @@ function build_portfolio()
 
 function build_project( id )
 {
-	$.getJSON( "data/get_project.php?id=" + id, function( json )
+	$.getJSON( "php/get_project.php?id=" + id, function( json )
 	{
 		$( "#features" ).after( "<br /><h2>" + json.tag + "</h2><p>" + json.intro + "</p><div style='clear:both'></div>" );
 		$( ".ribbon span" ).first().html( json.title );
@@ -260,7 +260,7 @@ function build_project( id )
 				$( document.createElement( 'div' ) )
 					.addClass( "feature" )
 					.append(
-						$( document.createElement( 'img' ) ).attr( "src", "data/get_feature_image.php?id=" + id + "&n=" + i )
+						$( document.createElement( 'img' ) ).attr( "src", "php/get_feature_image.php?id=" + id + "&n=" + i )
 					)
 					.append( "<p><b>" + json.features[ i ].title + "</b> - " + json.features[ i ].text + "</p>" )
 			);

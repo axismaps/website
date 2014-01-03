@@ -66,9 +66,9 @@ hr {
 	display: none;
 	margin-bottom: 15px;
 }
-
 #contact #other{
-	margin-left: 60%;
+	float: right;
+	width: 40%;
 }
 
 #contact form{
@@ -98,6 +98,7 @@ hr {
 	width: 100%;
 	height: 160px;
 	font: 15px / 20px "pt-sans", sans-serif !important;
+	resize: none;
 }
 
 #contact #submit{
@@ -222,7 +223,6 @@ nav li.current, nav li.current:hover{
 /* SIDEBAR */
 #sidebar{
 	color: #666;
-	background-color: #fbf9ed;
 	font-size: 13px;
 	line-height: 16px;
 	float: right;
@@ -234,8 +234,8 @@ nav li.current, nav li.current:hover{
 	text-transform: uppercase;
 }
 #sidebar h4:not(:first-child) {
-	margin-top: 40px;
-	padding-top: 28px;
+	margin-top: 35px;
+	padding-top: 25px;
 	border-top: 1px solid #BBBAAE;
 }
 #sidebar ul{
@@ -243,23 +243,10 @@ nav li.current, nav li.current:hover{
 	padding: 0;
 	list-style: none;
 }
-
 #sidebar li{
 	margin: 0 0 15px;
 	word-wrap: break-word;
 }
-
-#sidebar .bar{
-/*	margin-left: 10px;
-	padding: 25px 10px 25px;
-	width: 190px;
-	border-bottom: 1px solid #bbbaae;*/
-}
-
-#sidebar .bar > div{
-	margin-top: 10px;
-}
-
 #store img{
 	float: none;
 	margin: 0 !important;
@@ -307,7 +294,14 @@ footer p:last-child {
 	margin-top: 2em;
 }
 /* INDEX */
-
+#main {
+	background-color: #fbf9ed;
+}
+#main:after{
+	content: "";
+	display: block; 
+	clear: both;
+}
 #main-content{
 	float: left;
 	width: 755px;
@@ -323,6 +317,10 @@ footer p:last-child {
 	text-indent: 40px;
 	font: 21px / 42px "chaparral-pro", sans-serif;
 	background: #a6a499
+}
+.ribbon .soft {
+	font-weight: normal;
+	font-style: italic;
 }
 .ribbon:before {
 	content: "";
@@ -502,33 +500,80 @@ footer p:last-child {
 }
 
 /* PORTFOLIO */
-#featured{
-	padding-right: 25px;
-}
 
-.featured{
+#featured  {
+	background: #FBF9ED;
+
+}
+#featured ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#featured:after, #featured ul:after {
+	content: "";
+	display: block; 
+	clear: both;
+}
+#featured ul li {
 	float: left;
 	margin: 25px 0 75px 25px;
-	width: 289px;
+	width: 285px;
 	height: 205px;
 	border: 1px solid #ddd;
+	opacity: 1;
 }
-
-.featured p{
+#featured ul li:hover{
+	cursor: pointer;
+}
+#featured ul li a img{
+	height: 185px;
+	border: 10px solid white;
+	background-position: left center;
+	background-size: cover;
+}
+#featured ul li a img:hover {
+	border-color: red;
+	transition: border-color .8s;
+}
+#featured ul li p a{
+	text-decoration: none;
+	color: #005C7A;
+	
+}
+#featured ul li p a:hover {
+	color: #333;
+	transition: color .3s;
+}
+#featured ul li p{
 	display: block;
 	margin: 10px 0 0;
 	color: #333;
 	text-align: center;
 	font-size: 16px;
 }
-
-.featured .big_image{
-	height: 185px;
-	border: 10px solid white;
-	background-position: left center;
-	background-size: cover;
+#more-work {
+	height: 40px;
+	padding-top: 25px;
+	margin-bottom: 0;
+	border-top: 1px solid #DDDDDD;
+	text-align: center;
 }
-
+#more-work a {
+	text-decoration: none;
+}
+#more-work a:hover {
+	color: #333;
+	transition: color .3s;
+}
+#more-work a:after {
+	background: url("../images/expand.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    content: "";
+    height: 11px;
+    margin: 5px 0 0 10px;
+    position: absolute;
+    width: 50px;
+}
 #all{
 	display: none;
 	padding: 0 80px;
@@ -581,6 +626,7 @@ footer p:last-child {
 	position: relative;
 	float: right;
 	overflow: hidden;
+	box-shadow: -6px 0px 5px -5px #999;
 }
 #project-image-summary {
 	width: 612px;
@@ -590,4 +636,37 @@ footer p:last-child {
 	bottom: 0;
 	font-style: italic;
 	color: white;
+}
+
+
+@media (max-width: 975px) {
+
+	#container {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	#main-content {
+		width: 100%;
+
+	}
+	#sidebar {
+		width: 96%;
+		float: none;
+		padding: 0 2%;
+	}
+	#sidebar:after {
+		content: "";
+		display: block; 
+		clear: both;
+	}
+	#sidebar > div {
+		width: 32%;
+		float: left;
+
+	}
+	#sidebar div:not(:last-child) {
+		margin-right: 2%;
+	}
+
 }

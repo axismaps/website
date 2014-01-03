@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Oh My Mug</title>
+	<title>Axis Maps LLC - Cartography. Visualization. Design.</title>
 	<meta name="description" content="Axis Maps Data Design Code">
 	<?php include('include/meta.php'); ?>
 </head>
@@ -17,8 +17,9 @@
 	<img id='vignette' src='images/vignette.png'>
 </div><!-- end slideshow -->
 <?php include('include/nav.php'); ?>
+<div id='main'>
 <div id='main-content'>
-	<section id="trio">
+	<section id='trio'>
 		<h2 class='ribbon'>We build custom interactive maps. Each map is made of:</h2>
 			<article class="data">
 				<h3 class='more data' name='data'>Data</h3>
@@ -70,6 +71,7 @@
 	</section>
 </div><!-- end main-content -->
 <?php include('include/sidebar.php'); ?>
+</div><!-- end main -->
 <?php include('include/footer.php'); ?>
 </div><!-- end container -->
 <script src="js/jquery.js"></script>

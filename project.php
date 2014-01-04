@@ -12,13 +12,13 @@
 <?php include('include/header.php'); ?>
 <?php include('include/nav.php'); ?>
 	<section id='project-featured'>
-		<h2 class='ribbon'><span>Next &#62;</span><span>&#60; Prev</span></h2>
+		<h2 class='ribbon'><span><a href='#'>Next &#62;</a></span><span><a href='#prev'>&#60; Prev</a></span></h2>
 		<div id='project-summary'>
 			<h3></h3>
 			<p></p>
 		</div>
 		<div id="project-slideshow">
-			<div id="project-image-summary"></div>
+			<!-- <div id="project-image-summary"></div> -->
 		</div>
 	</section>
 	<section id="trio">

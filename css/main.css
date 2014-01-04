@@ -628,7 +628,7 @@ footer p:last-child {
 	overflow: hidden;
 	box-shadow: -6px 0px 5px -5px #999;
 }
-#project-image-summary {
+.project-image-summary {
 	width: 612px;
 	padding: 0 15px;
 	background: rgba(0,0,0,.6);

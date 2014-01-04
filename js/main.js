@@ -85,13 +85,6 @@ function nav_current() {
 	}
 
 }
-function resize_home()
-{
-	$( "body, #vignette" ).width( $( window ).width() < 1005 ? 760 : 975 );
-	$( "#home" ).attr( "class", $( window ).width() < 1005 ? null : "right-shadow" );
-	$( "#home" ).width( $( window ).width() < 1005 ? 760 : 755 );
-	$( "#sidebar > div" ).css( "margin-left", $( window ).width() < 1005 ? "20px" : 0 );
-}
 
 function mini_portfolio()
 {
@@ -126,6 +119,7 @@ function mini_portfolio()
 
 function build_slideshow( p )
 {
+
 	for( var i = 0; i < p.length; i++ )
 	{
 		$( "#slides" )
@@ -304,12 +298,20 @@ function build_project( id )
 		$("#project-featured h2").prepend(json['title']);
 		$("#project-summary h3").html(json['tag']);
 		$("#project-summary p").html(json['intro']);
-		// $("#project-slideshow").append($(document.createElement('img')).attr("src","php/get_feature_image.php?id=" + id + "&n=1");
-		// $( "#features" ).after( "<br /><h2>" + json.tag + "</h2><p>" + json.intro + "</p><div style='clear:both'></div>" );
-		// $( ".ribbon span" ).first().html( json.title );
-		$("#project-slideshow").append( $(document.createElement('img')).attr('src','php/get_feature_image.php?id='+id+'&n=0&w=642&h=520'));
-		$("#project-image-summary").append('<p><strong>'+json.features[0]['title']+'</strong> '+json.features[0]['text']+'</p>');
-		
+
+		// var i = 0;
+		// $("#project-slideshow").append( $(document.createElement('img')).attr('src','php/get_feature_image.php?id='+id+'&n=' + i + '&w=642&h=520'));
+		// $("#project-image-summary").append('<p><strong>'+json.features[i]['title']+'</strong> '+json.features[i]['text']+'</p>');
+		// build slideshow structure
+		for( var i = 0; i < json.features.length; i++ ) {
+			$("#project-slideshow").append( $(document.createElement('div'))
+				.append( $(document.createElement('img')).attr('src','php/get_feature_image.php?id='+id+'&n=' + i + '&w=642&h=520'))
+				.append( $(document.createElement('div')).addClass('project-image-summary')
+				.append('<p><strong>'+json.features[i]['title']+'</strong> '+json.features[i]['text']+'</p>'))
+			);
+
+		}
+		$('#project-slideshow > div:not(:first-child)').hide();
 		// for( var i = 0; i < json.features.length; i++ )
 		// {
 		// 	$("#project-slideshow").append(

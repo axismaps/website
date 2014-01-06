@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Axis Maps Project</title>
+	<title>Axis Maps LLC Project - Cartography. Visualization. Design.</title>
 	<meta name="description" content="Axis Maps Data Design Code">
 	<?php include('include/meta.php'); ?>
 </head>
@@ -43,8 +43,8 @@
 <script src="js/main.js"></script>
 <script>
 	$(document).ready(function() {
-		// build_project( window.location.hash.replace( "#", "" ) );
-		 build_project('ejn'); //hard-coded
+		build_project( window.location.hash.replace( "#", "" ) );
+		 // build_project('ejn'); //hard-coded
 	});
 </script>
 </body>

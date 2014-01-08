@@ -533,8 +533,8 @@ footer p:last-child {
 	background-size: cover;
 }
 #featured ul li a img:hover {
-	border-color: red;
-	transition: border-color .8s;
+	border-color: #ddd;
+	transition: border-color .2s;
 }
 #featured ul li p a{
 	text-decoration: none;
@@ -628,6 +628,21 @@ footer p:last-child {
 	overflow: hidden;
 	box-shadow: -6px 0px 5px -5px #999;
 }
+#project-slideshow > div {
+	position: absolute;
+	display: inline-block;
+}
+.hiddenSlide {
+	left: 100%;
+	-webkit-transition: left 300ms ease-in;
+	transition: left 300ms ease-in;
+}
+.currentSlide {
+	left: 0;
+	-webkit-transition: left 300ms ease-in;
+	transition: left 300ms ease-in;
+}
+
 .project-image-summary {
 	width: 612px;
 	padding: 0 15px;

@@ -1,7 +1,7 @@
 # Global Commodities Chronology
 
 ## Overview
-This chronology is the centerpiece of both the Global Commodities and Empire Online projects. The primary goal was to create an engaging way to get students to interact with a massive chronology dataset. The map pulls short entries from a database covering thousands and thousands of years.
+This chronology is the centerpiece of both the Global Commodities and Empire Online projects. The primary goal was to create an engaging way to get students to interact with chronological information. The map pulls short entries from a database covering thousands years organized by category and tag.
 
 ## Data
 The primary challenge with this dataset was working with over 3,000 entries and balancing load speed with the browser limitations of dynamically rendering each entry as a block. By working with the client before they started their extensive data collection process, we were able to arrive at a suitable compromise between the data they wanted to collect and the technical constraints of the project.	

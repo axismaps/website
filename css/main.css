@@ -4,9 +4,10 @@ html {
 
 body {
 	border-top: 8px solid #595959;
-	background: rgb(234, 232, 219) url(../images/background.png);
+	background: rgb(232, 232, 232) url(../images/background.png);
 	color: #1a1a1a;
 	font: 15px / 20px "pt-sans", sans-serif;
+	padding-top: 10px;
 }
 h2 {
 	margin: 0;
@@ -48,6 +49,9 @@ hr {
 	display: block; 
 	clear: both;
 }
+#header img{
+	height: 80px;
+}
 #build, #contact #submit{
 	float: right;
 	margin: 5px 0;
@@ -61,6 +65,9 @@ hr {
 	font-family: "chaparral-pro", sans-serif;
 	line-height: 45px;
 	cursor: pointer;
+}
+#build{
+	margin-top: 15px;
 }
 #contact{
 	display: none;
@@ -120,7 +127,7 @@ nav, nav ul{
 	margin: 0;
 	font-size: 16px;
 	line-height: 60px;
-	background-color: #fbf9ed;
+	background-color: #eee;
 }
 nav li{
 	display: inline;
@@ -295,7 +302,7 @@ footer p:last-child {
 }
 /* INDEX */
 #main {
-	background-color: #fbf9ed;
+	background-color: #eee;
 }
 #main:after{
 	content: "";
@@ -316,7 +323,7 @@ footer p:last-child {
 	color: white;
 	text-indent: 40px;
 	font: 21px / 42px "chaparral-pro", sans-serif;
-	background: #a6a499
+	background: #999
 }
 .ribbon .soft {
 	font-weight: normal;
@@ -392,7 +399,7 @@ footer p:last-child {
 	border-bottom: 1px solid white;
 }
 #trio article.closed {
-	background: #fbf9ed;
+	background: #eee;
 	border-bottom: 1px solid #ddd;
      -webkit-transition: all 250ms linear;
      -moz-transition: all 250ms linear;
@@ -423,11 +430,10 @@ footer p:last-child {
 	background: url(../images/design_home.png);
 }
 #trio h3.code:before {
-	height: 45px;
 	background: url(../images/code_home.png);
 }
-#trio h3:hover:before {
-	background-position: -62px 0;
+#trio h3:before {
+	background-position: -62px 0 !important;
 }
 
 .explain .horizontal:hover .expand{
@@ -502,7 +508,7 @@ footer p:last-child {
 /* PORTFOLIO */
 
 #featured  {
-	background: #FBF9ED;
+	background: #eee;
 
 }
 #featured ul {

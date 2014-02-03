@@ -14,12 +14,12 @@
 		$featured[ $id ] = $row;
 	}
 	
-	if( file_exists( '../media' ) )
+	if( file_exists( dirname(__FILE__) . '/../media' ) )
 	{
-		rm_folder( '../media' );
+		rm_folder( dirname(__FILE__) . '/../media' );
 	}
-	mkdir( '../media', 0777, true );
-	mkdir( '../media/slideshow', 0777, true );
+	mkdir( dirname(__FILE__) . '/../media', 0777, true );
+	mkdir( dirname(__FILE__) . '/../media/slideshow', 0777, true );
 	
 	$results = $db->query( "SELECT * FROM images" );
 	while( $row = $results->fetchArray( SQLITE3_ASSOC ) )
@@ -32,11 +32,11 @@
 			$featured[ $id ] = $row;
 			$featured[ $id ][ 'featured' ] = $f;
 		}
-		file_put_contents( "../media/slideshow/" . $id . ".png" , $row[ 'image' ] );
+		file_put_contents( dirname(__FILE__) . "/../media/slideshow/" . $id . ".png" , $row[ 'image' ] );
 	}
 	
-	mkdir( '../media/icon', 0777, true );
-	mkdir( '../media/portfolio', 0777, true );
+	mkdir( dirname(__FILE__) . '/../media/icon', 0777, true );
+	mkdir( dirname(__FILE__) . '/../media/portfolio', 0777, true );
 	
 	foreach( $featured as $id => $el )
 	{
@@ -44,25 +44,25 @@
 		{
 			if( $el[ 'featured' ] == 1 )
 			{
-				imagepng( resample( $el[ 'image' ], 70, 70, $el[ 'x' ], $el[ 'y' ], false ), "../media/icon/" . $id . ".png" );
-				imagepng( resample( $el[ 'image' ], 265, 185, $el[ 'x' ], $el[ 'y' ], false ), "../media/portfolio/" . $id . ".png" );
+				imagepng( resample( $el[ 'image' ], 70, 70, $el[ 'x' ], $el[ 'y' ], false ), dirname(__FILE__) . "/../media/icon/" . $id . ".png" );
+				imagepng( resample( $el[ 'image' ], 265, 185, $el[ 'x' ], $el[ 'y' ], false ), dirname(__FILE__) . "/../media/portfolio/" . $id . ".png" );
 			}
 			else
 			{
-				imagepng( resample( $el[ 'image' ], 815, 255, $el[ 'x' ], $el[ 'y' ], false ), "../media/portfolio/" . $id . ".png" );
+				imagepng( resample( $el[ 'image' ], 815, 255, $el[ 'x' ], $el[ 'y' ], false ), dirname(__FILE__) . "/../media/portfolio/" . $id . ".png" );
 			}
 		}
 	}
 	
-	mkdir( '../media/features', 0777, true );
+	mkdir( dirname(__FILE__) . '/../media/features', 0777, true );
 	$results = $db->query( "SELECT project, step, image FROM features" );
 	while( $row = $results->fetchArray( SQLITE3_ASSOC ) )
 	{
-		if( !file_exists( '../media/features/' . $row[ 'project' ] ) )
+		if( !file_exists( dirname(__FILE__) . '/../media/features/' . $row[ 'project' ] ) )
 		{
-			mkdir( '../media/features/' . $row[ 'project' ], 0777, true );
+			mkdir( dirname(__FILE__) . '/../media/features/' . $row[ 'project' ], 0777, true );
 		}
-		imagepng( resample( $row[ 'image' ], 640, 520, null, null, false ), '../media/features/' . $row[ 'project' ] . "/" . $row[ 'step' ] . ".png" );
+		imagepng( resample( $row[ 'image' ], 640, 520, null, null, false ), dirname(__FILE__) . '/../media/features/' . $row[ 'project' ] . "/" . $row[ 'step' ] . ".png" );
 	}
 	
 	function rm_folder( $dir )

@@ -7,12 +7,12 @@
 	
 	//adding feature text
 	echo( "\nLoading feature text:\n" );
-	$files = scandir( '../data/text/highlighted/' );
+	$files = scandir( dirname(__FILE__) . '/../data/text/highlighted/' );
 	foreach( $files as $f )
 	{
 		if( preg_match( "/\\.md$/u", $f ) )
 		{
-			$text = file_get_contents( "../data/text/highlighted/$f" );
+			$text = file_get_contents( dirname(__FILE__) . "/../data/text/highlighted/$f" );
 			$result = Parsedown::instance()->parse( $text );
 		
 			$matches = array();
@@ -30,12 +30,12 @@
 	
 	//adding big images
 	echo( "\nLoading slideshow images:\n" );
-	$files = scandir( '../data/media/slideshow/' );
+	$files = scandir( dirname(__FILE__) . '/../data/media/slideshow/' );
 	foreach( $files as $f )
 	{
 		if( preg_match( "/\\.png$/u", $f ) )
 		{
-			$image = file_get_contents( "../data/media/slideshow/$f" );
+			$image = file_get_contents( dirname(__FILE__) . "/../data/media/slideshow/$f" );
 			$matches = array();
 			
 			preg_match_all( "/(?<=-)[0-9]*/u", $f, $matches );
@@ -55,13 +55,13 @@
 	
 	//adding feature slideshow
 	echo( "\nLoading features slideshow:\n" );
-	$files = scandir( '../data/media/features/' );
+	$files = scandir( dirname(__FILE__) . '/../data/media/features/' );
 	foreach( $files as $f )
 	{
-		if( is_dir( "../data/media/features/$f" ) && preg_match( "/[a-z].*/u", $f ) )
+		if( is_dir( dirname(__FILE__) . "/../data/media/features/$f" ) && preg_match( "/[a-z].*/u", $f ) )
 		{
 			
-			$text = file_get_contents( "../data/text/features/$f.md" );
+			$text = file_get_contents( dirname(__FILE__) . "/../data/text/features/$f.md" );
 			$title = array();
 			$caption = array();
 			
@@ -72,12 +72,12 @@
 			
 			echo( "   $f - " );
 			
-			$sub = scandir( "../data/media/features/$f" );
+			$sub = scandir( dirname(__FILE__) . "/../data/media/features/$f" );
 			foreach( $sub as $s )
 			{
 				if( preg_match( "/\\.png$/u", $s ) )
 				{
-					$image = file_get_contents( "../data/media/features/$f/$s" );
+					$image = file_get_contents( dirname(__FILE__) . "/../data/media/features/$f/$s" );
 					$id = intval( preg_replace( "/-.*\\.png$/u", "", $s ) );
 					$query = $db->prepare( "INSERT INTO features ( project, step, title, text, image ) VALUES( ?, ?, ?, ?, ? )" );
 					$query->bindValue( 1, $f, SQLITE3_TEXT );

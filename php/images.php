@@ -1,6 +1,6 @@
 <?php
 
-	function resample( $data, $dest_w, $dest_h, $x = null, $y = null )
+	function resample( $data, $dest_w, $dest_h, $x = null, $y = null, $show = true )
 	{
 		$im = imagecreatefromstring( $data );
 		$h = imagesy( $im ) - 5;
@@ -28,7 +28,14 @@
 			$source_w,
 			$source_h
 		);
-		show( $new );
+		if( $show )
+		{
+			show( $new );
+		}
+		else
+		{
+			return $new;
+		}
 		imagedestroy( $new );
 	}
 	

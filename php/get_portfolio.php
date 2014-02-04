@@ -11,6 +11,8 @@
 		$query = 'SELECT id, title, client, tag, featured FROM projects';
 	}
 	
+	$query .= ' ORDER BY featured DESC, DATE DESC';
+	
 	$results = $db->query( $query );
 	while( $row = $results->fetchArray( SQLITE3_ASSOC ) )
 	{

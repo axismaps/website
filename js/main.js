@@ -30,26 +30,56 @@ function init_events()
 
 	$( ".more" ).click( function()
 	{	
+
 		var targetName = $(this).attr("name"),
 			targetTrioArticle = $("#trio > ." + targetName),
-			targetExplanation = $("#explanations > ."+ targetName);
+			targetExplanation = $("#explanations > ."+ targetName);	
 
 		if(targetTrioArticle.hasClass("open")) {
 			targetExplanation.slideUp();
 			targetTrioArticle.removeClass("open");
 			$("#trio article").removeClass("closed");
+			if($(window).width() < 800) {
+				$("#trio > ." + targetName + ' article').slideUp(400, function() {
+					$(this).detach().appendTo("#explanations");
+				});
+			}	
 		} else {
 			if(targetTrioArticle.siblings('article').hasClass("open")) {
 				targetTrioArticle.siblings('article').removeClass("open").addClass("closed");
-				targetExplanation.siblings('article').fadeOut();
 				targetTrioArticle.removeClass('closed').addClass('open');
-				targetExplanation.fadeIn();
+
+				if($(window).width() < 800) {
+					$("#trio article article").slideUp(400, function() {
+						$(this).detach().appendTo("#explanations");
+						targetExplanation.detach().insertAfter("#trio > ." + targetName + " p:last-child");
+						targetExplanation.slideDown();
+					});
+				} else {
+					targetExplanation.siblings('article').fadeOut();
+					targetExplanation.fadeIn();
+				}
+				
+
 			} else {
+				if($(window).width() < 800) {
+					targetExplanation.detach().insertAfter("#trio > ." + targetName + " p:last-child");
+				}	
 				targetExplanation.slideDown();
 				targetTrioArticle.siblings('article').addClass("closed");
 				targetTrioArticle.addClass("open");
 			}
 		}
+		$(window).resize(function() {
+			if($(window).width() > 800) {
+				$("#trio > ." + targetName + ' article').slideUp(400, function() {
+					$(this).detach().appendTo("#explanations");
+				});	
+			}
+			if ($(window).width() < 800) {
+				targetExplanation.detach().insertAfter("#trio > ." + targetName + " p:last-child");
+			}
+		});
 	});
 	
 	$( "#build, #cancel_contact" ).click( function()
@@ -65,6 +95,26 @@ function init_events()
 	});
 	
 	$( "#contact form" ).submit( webform_submit );
+	$("input#name").click(function() {
+		if(this.value == 'name') {
+			this.value = '';
+		}
+	});
+	$("input#email").click(function() {
+		if(this.value == 'janedoe@email.com') {
+			this.value = '';
+		}
+	});
+
+	$("#menu").click(function() {
+		$("nav ul").slideToggle();
+	})
+	$(window).resize(function() {
+		if($(window).width() > 520) {
+			$("nav ul").show();
+		}
+	});
+
 }
 function nav_current() {
 
@@ -72,7 +122,7 @@ function nav_current() {
 	if(filename.indexOf('#') != 0) {
 		filename = filename.split('#').shift();
 	}
-	if(filename == 'index.php') {
+	if(filename == 'index.php' || filename == '') {
 		$("nav a[href='index.php']").parent().addClass('current');
 	}
 	if(filename == 'portfolio.php' || filename == 'project.php') {

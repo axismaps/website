@@ -65,6 +65,9 @@ hr {
 #build:hover, #contact #submit:hover{
 	background-color: #666;
 }
+#build span{
+	display: none;
+}
 #contact{
 	display: none;
 	margin-bottom: 15px;
@@ -91,10 +94,14 @@ hr {
 
 #contact input{
 	margin: 10px 0 5px 5px;
-	width: 75%;
-	text-indent: 10px;
+	width: 50%;
+	/*text-indent: 10px;*/
 	font: 15px / 20px "pt-sans", sans-serif !important;
 	line-height: 25px;
+	text-align: right;
+	padding-right: 2%;
+	color: #1A1A1A;
+	font-style: italic;
 }
 
 #contact textarea{
@@ -146,7 +153,17 @@ nav li.current, nav li.current:hover{
 	background-color: #666;
 	color: white;
 }
-
+nav #menu {
+	font-size: 2em;
+	text-align: right;
+	margin: 0 10px 0 0;
+	display: none;
+	line-height: 1.4em;
+	padding: 0;
+}
+nav #menu:hover {
+	cursor: pointer;
+}
 /* SLIDESHOW */
 #slideshow{
 	overflow: hidden;
@@ -232,6 +249,9 @@ nav li.current, nav li.current:hover{
 	width: 180px;
 	height: 100%;
 	padding: 0 20px;
+}
+#sidebar h2 {
+	display: none;
 }
 #sidebar h4 {
 	text-transform: uppercase;
@@ -462,8 +482,8 @@ footer p:last-child {
 
 .mini-portfolio{
 	float: left;
-	margin: 20px 10px;
-	width: 325px;
+	margin: 20px 5%;
+	width: 40%;
 	height: 70px;
 	cursor: pointer;
 }
@@ -642,36 +662,141 @@ footer p:last-child {
 	font-style: italic;
 	color: white;
 }
+@media (max-width: 520px) {
+	.logo {
+		width: 70%;
+	}
+	#build b {
+		display: none;
+	}
+	#build span {
+		display: inline;
+		font-size: 2em;
+	}
+	#slideshow{
+		display: none;
+	}
+	nav #menu {
+		display: block;
+	}
+	nav ul {
+		display: none;
+		padding: 0;
+		line-height: 40px;
+	}
+	nav ul li {
+		display: block;
+	}
+	.mini-portfolio { 
+		width: 100%;
+	}
+	#trio article article {
+		width: 95%;
+		height: 100%;
+		padding: 0;
+	}
+	#sidebar > div {
+		width: 100%;
+	}
 
+}
+@media (max-width: 800px) {
+	#build {
+		width: auto;
+		padding: 0 15px;
+	}
+	#build em, #contact form em {
+		display: none;
+	}	
+	input#name, input#email {
+		width: 94%;
+		margin-left: 0;
+	}
+	#trio > article {
+		width: 92%;
+		height: auto;
+		border-bottom: 1px solid #DDDDDD;
+	}
+	#trio article:after {
+		border: none;
+	}
+	#trio p.more {
+		position: relative;
+		margin-top: 20px;
+	}
 
+	#trio article article p {
+
+	}
+	#axis-summary {
+		background: none;
+		padding-bottom: 20px;
+	}
+	#axis-summary p {
+		padding: 0 4% 0 4%;
+	}
+
+}
+@media (min-width: 521px) and (max-width: 800px) {
+	#trio article article {
+		padding: 0 30% 0 0;
+		width: 70%;
+		height: 100%;
+	}
+	#trio article article.data {
+		background: url(../images/charts.png) right top no-repeat;
+	}
+	#trio article article.design {
+		background:url(../images/dymax.png) right top no-repeat;
+	}
+	#trio article article.code {
+		background:url(../images/histogram.png) right top no-repeat;
+	}
+	#sidebar > div {
+		width: 45%;
+		float: left;
+	}
+}
+@media (min-width: 800px) and (max-width: 975px) {
+	#sidebar > div {
+		width: 32%;
+		float: left;
+	}
+}
 @media (max-width: 975px) {
 
 	#container {
 		width: 90%;
 		margin: 0 auto;
 	}
-
 	#main-content {
 		width: 100%;
-
+		box-shadow: none;
+	}
+	#main-content:after {
+		content: "";
+		display: block; 
+		clear: both;
+	}
+	.ribbon {
+		/*height: 100%;*/
 	}
 	#sidebar {
 		width: 96%;
 		float: none;
 		padding: 0 2%;
+		background: #fff;
+		clear: left;
+		display: table;
+	}
+	#sidebar h2 {
+		display: block;
+		width: 104%;
+		margin-left: -2%;
 	}
 	#sidebar:after {
 		content: "";
 		display: block; 
 		clear: both;
 	}
-	#sidebar > div {
-		width: 32%;
-		float: left;
-
-	}
-	#sidebar div:not(:last-child) {
-		margin-right: 2%;
-	}
-
 }

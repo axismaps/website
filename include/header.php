@@ -1,16 +1,16 @@
 <div id="header">
-	<img src='images/logo.png'>
-	<div id="build"><b>Contact Us</b> | <em>We want to build your map</em></div>
+	<img src='images/logo.png' alt='Axis Maps, LLC' class='logo'>
+	<div id="build"><span>&#9993;</span><b>Contact Us</b><em> | We want to build your map</em></div>
 	
 	<div id="contact">
 		<form>
 			<em>We'll get back to you by email</em>
 			<label for="body" style="float:left">How can we help you?</label>
 			<textarea id="body"></textarea>
-			<label for="name">Your name: </label>
-			<input type="text" id="name"><br>
-			<label for="email">Your email: </label>
-			<input type="email" id="email">
+			<!-- <label for="name">Your name: </label> -->
+			<input type="text" id="name" value="name"><br>
+			<!-- <label for="email">Your email: </label> -->
+			<input type="email" id="email" value="janedoe@email.com"><br>
 			<input type="submit" value="Submit" id="submit">
 			<a href="#" id="cancel_contact">Cancel</a>
 		</form>

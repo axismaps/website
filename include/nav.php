@@ -1,4 +1,5 @@
 <nav>
+	<a id="menu">&#9776;</a>
 	<ul>
 		<li><a href='index.php'>Home</a></li>
 		<li><a href='portfolio.php'>Portfolio</a></li>

@@ -1,6 +1,6 @@
 <div id='sidebar'>
 	<div>
-		<h4>on the blog</h4>
+		<h4 class="no-border">on the blog</h4>
 		<ul id='blog'></ul>
 		<h4>new at at the store</h4>
 		<div id="store"></div>
@@ -18,7 +18,7 @@
 		<h4>newsletter</h4>
 		<p>Stay up-to-date with our latest news</p>
 		<form action='http://axismaps.createsend.com/t/y/s/kluir/' method='post' id='subForm'>
-			<input type='text' name='cm-kluir-kluir' id='kluir-kluir' value='Email address...'>
+			<input type='text' name='cm-kluir-kluir' id='kluir-kluir' placeholder='Email address...'>
 			<input id='submit' type='submit' value='Subscribe'>
 		</form>
 	</div>

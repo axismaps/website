@@ -41,7 +41,7 @@ hr {
 }
 /* HEADER */
 #header{
-	padding: 20px 0;
+	padding: 25px 0 15px;
 }
 #header:after {
 	content: "";
@@ -235,11 +235,14 @@ nav li.current, nav li.current:hover{
 }
 #sidebar h4 {
 	text-transform: uppercase;
-}
-#sidebar h4:not(:first-child) {
 	margin-top: 35px;
 	padding-top: 25px;
-	border-top: 1px solid #BBBAAE;
+	border-top: 1px solid #ccc;
+}
+#sidebar h4.no-border{
+	border: none;
+	padding: 0;
+	margin-top: 15px;
 }
 #sidebar ul{
 	margin: 0;
@@ -260,8 +263,6 @@ nav li.current, nav li.current:hover{
 	margin: 0;
 	padding: 5px;
 	width: 170px;
-	border: none;
-	background-color: #c1beae;
 	color: #666;
 	font-style: italic;
 	font-size: 13px;
@@ -271,7 +272,8 @@ nav li.current, nav li.current:hover{
 	margin: 10px 0 0 2px;
 	padding: 0;
 	background: none;
-	color: #005c7a;
+	border: none;
+	color: #0061ad;
 	text-align: left;
 	text-decoration: underline;
 	font-style: normal;

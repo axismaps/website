@@ -347,9 +347,13 @@ footer p:last-child {
 	font-style: italic;
 }
 #trio {
-	display: table;
 	height: 100%;
 	background: #fff;
+}
+#trio:after {
+	content: '';
+	display: block;
+	clear: both;
 }
 #trio article {
 	position: relative;

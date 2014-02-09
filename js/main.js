@@ -254,7 +254,8 @@ function slideshow(numSlides, slideContainer) {
         totalSlides = numSlides,
         timer = null,
         playing = false,
-        timeDelay = 3000;
+        timeDelay = 3000,
+        entered = false;
 
     function advance() {
 
@@ -294,6 +295,7 @@ function slideshow(numSlides, slideContainer) {
     }
 
     function playSlides() {
+    	
         function loop() {
             advance();
             timer = setTimeout(loop, timeDelay);
@@ -310,9 +312,12 @@ function slideshow(numSlides, slideContainer) {
     });
     $(slideContainer).on('mouseenter', function() {
     	clearTimeout(timer);
+    	entered = true;
     });
     $(slideContainer).on('mouseleave', function() {
-    	playSlides();
+    	if(entered) {  // to make sure the user didn't start with pointer inside slideshow
+    		playSlides();
+    	}
     });
     setTimeout(playSlides, timeDelay);
 }

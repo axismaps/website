@@ -719,6 +719,9 @@ p.more span{
 	#build{
 		line-height: 52px;
 	}
+	#contact > * {
+		width: 100% !important;
+	}
 
 }
 @media (max-width: 800px) {

@@ -12,9 +12,8 @@
 <?php include('include/header.php'); ?>
 <div id='slideshow'>
 	<img id='init' src='images/slideshow_start.png'>
-	<div id='controls'><span class='before'>&#9664;</span><span class='after'>&#9654;</span></div>
-	<div id='slides'></div>
-	<img id='vignette' src='images/vignette.png'>
+	<div id='controls'><span id='prev'>&#9664;</span><span id='next'>&#9654;</span></div>
+	<ul id='slides'></ul>
 </div><!-- end slideshow -->
 <?php include('include/nav.php'); ?>
 <div id='main'>
@@ -76,5 +75,10 @@
 </div><!-- end container -->
 <script src="js/jquery.js"></script>
 <script src="js/main.js"></script>
+<script>
+	$(document).ready(function() {
+		mini_portfolio();
+	});
+</script>
 </body>
 </html>

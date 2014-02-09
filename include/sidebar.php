@@ -1,5 +1,5 @@
 <div id='sidebar'>
-	<h2 class="ribbon">What else are we up do?</h2>
+	<h2 class="ribbon">What else are we up to?</h2>
 	<div>
 		<h4 class="no-border">on the blog</h4>
 		<ul id='blog'></ul>

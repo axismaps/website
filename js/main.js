@@ -4,10 +4,6 @@ var skip = false;
 setup_sidebar();
 init_events();
 nav_current();
-mini_portfolio();
-
-// $( window ).resize( resize_home );
-// resize_home();
 
 function setup_sidebar()
 {
@@ -151,7 +147,7 @@ function mini_portfolio()
 						.prepend(
 							$( document.createElement( 'div' ) )
 								.addClass( "mini-image" )
-								.css( "background-image", "url( php/get_image.php?id=" + json[ i ].id + "&w=70&h=70 )" )
+								.css( "background-image", "url( media/icon/" + json[ i ].id + ".png" )
 						)
 				);
 				count++;
@@ -160,130 +156,41 @@ function mini_portfolio()
 		$( "#mini-portfolio" ).append(
 				$( document.createElement( 'div' ) ).css( "clear", "both" )
 		);
-		
 		build_slideshow( json );
 	});
 }
 
-function build_slideshow( p )
+function build_slideshow( json )
 {
-
-	for( var i = 0; i < p.length; i++ )
+	// first create a duplicate of the initial slide and add it to our slideshow list
+	$("#slides").append($(document.createElement('li'))
+		.append( $(document.createElement('img')).attr('src','images/slideshow_start.png')));
+	$("#init").remove();  // and remove the original initial slide
+	for( var i = 0; i < json.length; i++ )
 	{
 		$( "#slides" )
-			.append(
-				$( document.createElement( 'div' ) )
-					.attr( "id", p[ i ].id )
-					.addClass( "slide" )
-					.append(
-						$( document.createElement( 'img' ) ).attr( "src", "php/get_image.php?id=" + p[ i ].id )
-					)
-					.append(
-						$( document.createElement( 'div' ) )
-							.addClass( "title" )
-							.html( p[ i ].title )
-					)
+			.append($(document.createElement('li'))
+			.append( $(document.createElement('img')).attr('src','media/slideshow/' + json[i].id + '.png'))
+			.append( $( document.createElement( 'div' ) )
+				.addClass( "title" )
+				.html( json[i].title )
 			)
+		);
 	}
+
+	slideshow(json.length, '#slideshow');  // start slideshow magic
+
 	$( "#slideshow" )
 		.mouseenter( function()
 		{
 			$( "#slideshow" ).addClass( "hover" );
-			$( ".slide.current .title, #slideshow #controls" ).fadeIn();
+			$( "#slides .title, #slideshow #controls" ).fadeIn();
 		})
 		.mouseleave( function()
 		{
 			$( "#slideshow" ).removeClass( "hover" );
-			$( ".slide .title, #slideshow #controls" ).fadeOut();
-			skip = true;
+			$( "#slides .title, #slideshow #controls" ).fadeOut();
 		});
-		
-	$( "#controls .after" ).click( function()
-	{
-		if( $( this ).hasClass( "disabled" ) ) return false;
-		$( ".slide.current .title" ).fadeOut( "slow" );
-		$( ".slide.current" ).removeClass( "current" ).next().addClass( "shown current" );
-		$( ".slide.current .title" ).show();
-		if( $( ".slide.shown" ).length == 1 )
-		{
-			$( "#controls .before" ).addClass( "disabled" );
-		}
-		else
-		{
-			$( "#controls .before" ).removeClass( "disabled" );
-		}
-		if( $( ".slide.shown" ).length == $( ".slide" ).length )
-		{
-			$( "#controls .after" ).addClass( "disabled" );
-		}
-		else
-		{
-			$( "#controls .after" ).removeClass( "disabled" );
-		}
-		skip = true;
-	})
-	
-	$( "#controls .before" ).click( function()
-	{
-		if( $( this ).hasClass( "disabled" ) ) { return false; }
-		$( ".slide.current .title" ).fadeOut( "slow" );
-		$( ".slide.current" ).removeClass( "shown current" );
-		$( ".slide.shown" ).last().addClass( "current" );
-		$( ".slide.current .title" ).show();
-		if( $( ".slide.shown" ).length == 1 )
-		{
-			$( "#controls .before" ).addClass( "disabled" );
-		}
-		else
-		{
-			$( "#controls .before" ).removeClass( "disabled" );
-		}
-		if( $( ".slide.shown" ).length == $( ".slide" ).length )
-		{
-			$( "#controls .after" ).addClass( "disabled" );
-		}
-		else
-		{
-			$( "#controls .after" ).removeClass( "disabled" );
-		}
-		skip = true;
-	})
-		
-	var advance = window.setInterval( advance_slide, 5000 );
-}
-
-function advance_slide()
-{
-	if( $( "#slideshow" ).hasClass( "hover" ) || skip )
-	{
-		skip = false;
-		return skip;
-	}
-	var div = $( ".slide.current" ).length == 0 ? $( ".slide" ).first() : $( ".slide.current" ).next();
-	var img = div.children( "img" ).first();
-	if( img.length == 0 )
-	{
-		var interval = window.setInterval( function()
-		{
-			$( "#slideshow" ).addClass( "hover" );
-			if( $( ".slide.shown" ).length <= 1 )
-			{
-				$( ".slide" ).first().addClass( "current" );
-				$( "#slideshow" ).removeClass( "hover" );
-				clearInterval( interval );
-				skip = true;
-			}
-			else
-			{
-				$( ".slide.shown" ).last().removeClass( "shown" );
-			}
-		}, 100 );
-	}
-	else if( img[ 0 ].complete )
-	{
-		$( ".slide.current" ).removeClass( "current" );
-		div.addClass( "shown current" );
-	}
 }
 
 function build_portfolio()
@@ -308,7 +215,7 @@ function build_portfolio()
 							.attr('alt', json[i].title)
 							.attr('width','265px') // explicitly define dimensions to avoid jump on page load
 							.attr('height', '185px')
-							.attr('src', "php/get_image.php?id=" + json[ i ].id + "&w=265&h=185 )" ))
+							.attr('src', "media/portfolio/" + json[ i ].id + ".png" ))
 							)		
 				);
 			}
@@ -337,7 +244,78 @@ function build_portfolio()
 		})
 	});
 }
+function slideshow(numSlides, slideContainer) {
 
+	var startSlide = $("#slides li:first-child")
+        currentSlide = startSlide,
+        startPos = { 'left':'102%' },
+        endPos = { 'left':'0px' },
+        count = 1,
+        totalSlides = numSlides,
+        timer = null,
+        playing = false,
+        timeDelay = 3000;
+
+    function advance() {
+
+        if(count == totalSlides) {
+            startSlide
+                .css('z-index',totalSlides).css(startPos)
+                .animate(endPos,400, function() {
+                    startSlide.css('z-index','0').siblings().css(startPos);
+                    currentSlide = startSlide;
+                    count = 1;
+                });
+
+        } else {
+            currentSlide = currentSlide.next(); 
+            currentSlide.animate(endPos, 400, function(){ 
+                count++;
+            }); 
+        }  
+
+    }
+    function rewind() {
+
+        if(count == 1) {    
+            currentSlide.css('z-index',totalSlides).siblings().css(endPos);
+            currentSlide.animate(startPos,400, function() {
+                count = totalSlides;
+                currentSlide.css('z-index','0').css(endPos);
+                currentSlide = $('#slides li:last-child');
+            });
+            
+        } else {
+            currentSlide.animate(startPos, 400, function(){ 
+                currentSlide = currentSlide.prev(); 
+                count--;                 
+            });
+        }
+    }
+
+    function playSlides() {
+        function loop() {
+            advance();
+            timer = setTimeout(loop, timeDelay);
+        }
+	    loop();
+    }
+    $('#next').on('click', function() {
+    	clearTimeout(timer);
+        advance();
+    });
+    $('#prev').on('click', function() {
+    	clearTimeout(timer);
+        rewind();
+    });
+    $(slideContainer).on('mouseenter', function() {
+    	clearTimeout(timer);
+    });
+    $(slideContainer).on('mouseleave', function() {
+    	playSlides();
+    });
+    setTimeout(playSlides, timeDelay);
+}
 function build_project( id )
 {
 
@@ -348,134 +326,18 @@ function build_project( id )
 		$("#project-summary p").html(json['intro']);
 
 		// build slideshow structure
-		for( var i = 0; i < json.features.length; i++ ) {
-			$("#project-slideshow").append( $(document.createElement('div'))
-				.append( $(document.createElement('img')).attr('src','php/get_feature_image.php?id='+id+'&n=' + i + '&w=642&h=520'))
+		for ( var i = 0; i < json.features.length; i++ ) {
+			$("#slides")
+				.append($(document.createElement('li'))
+				.append( $(document.createElement('img')).attr('src','media/features/' + json.id + '/' + i + '.png'))
 				.append( $(document.createElement('div')).addClass('project-image-summary')
 				.append('<p><strong>'+json.features[i]['title']+'</strong> '+json.features[i]['text']+'</p>'))
 			);
 
 		}
 
-		// set initial variables, select first and last, and add class for current
-		var numSlides = json.features.length,
-			slideNum = 1,
-			firstSlide = $('#project-slideshow > div:first-child'),
-			currentSlide = firstSlide.addClass('currentSlide'),
-			lastSlide = $('#project-slideshow > div:last-child'),
-			slideTimer;
-
-
-		function resetTimer() {
-			slideTimer = window.setInterval(advanceSlide, 5000);
-		}
-			
-		// make all but the first hidden
-		$('#project-slideshow > div:not(:first-child)').addClass('hiddenSlide');
-
-		function advanceSlide() {
-			
-			if(slideNum < numSlides) { 
-				// if slideshow is not at the end transition the next slide
-				// and wait until transition complete before hiding current slide
-				// update current slide
-
-				currentSlide.next().removeClass('hiddenSlide').addClass('currentSlide');
-				currentSlide.removeClass('currentSlide');
-				currentSlide = currentSlide.next();
-				setTimeout(function() { currentSlide.prev().addClass('hiddenSlide')}, 300);
-				slideNum++;
-
-			} else {
-				// if at the end of the slideshow, bring first slide up in stacking order
-				// wait until first slide transition is complete before hiding last slide
-				// and wait until that transition is complete before reseting stacking order
-				// and updating the slide counter
-
-				firstSlide.attr('style','z-index:1').removeClass('hiddenSlide').addClass('currentSlide');
-
-				setTimeout(function() {
-
-					lastSlide.removeClass('currentSlide').addClass('hiddenSlide');
-
-					setTimeout(function() {
-
-						firstSlide.removeAttr('style');
-						currentSlide = $('#project-slideshow > div:first-child');
-						slideNum = 1;
-
-					}, 300);
-
-				}, 300);
-
-			}
-
-		}
-
-		function rewindSlide() {
-			// if slide has advanced past the first slide, move previous slide into current state
-			// wait until complete and then hide the current slide and update slide count
-
-			if(slideNum > 1) {
-
-				currentSlide.prev().removeClass('hiddenSlide').addClass('currentSlide');
-
-				setTimeout(function() { 
-
-					currentSlide.removeClass('currentSlide').addClass('hiddenSlide');
-					currentSlide = currentSlide.prev();
-					slideNum--;
-
-				}, 300);
-
-			} else {
-				// if is on the first slide, stack first slide above the last
-				// move the last slide into current position (underneath first)
-				// wait until transition complete and then hide the current slide
-				// wait until complete before reseting stacking order and updating slide info
-
-				currentSlide.attr('style','z-index:1');
-				lastSlide.removeClass('hiddenSlide').addClass('currentSlide');
-
-				setTimeout(function() {
-
-					currentSlide.removeClass('currentSlide').addClass('hiddenSlide');
-
-					setTimeout(function() {
-
-						currentSlide.removeAttr('style');
-						currentSlide = lastSlide;
-						slideNum = numSlides;
-
-					}, 300);
-
-				}, 300);
-				
-			}
-
-		}
-
-		$('#next').click(function() {
-			window.clearInterval(slideTimer);
-			advanceSlide();
-			setTimeout(function(){ resetTimer(); }, 6000);
-		});
-
-		$('#prev').click(function() {	
-			window.clearInterval(slideTimer);
-			rewindSlide();
-			setTimeout(function(){ resetTimer(); }, 6000);
-		});
-		$('#project-slideshow').mouseenter(function() {
-			window.clearInterval(slideTimer);
-		}).mouseleave(function() {
-			// give user immediate feedback upon mousing off
-			advanceSlide();
-			resetTimer();
-
-		});
-
-		resetTimer(); // starts the slideshow timer
+		slideshow(json.features.length, "#project-slideshow");
+		
 
 		$("#trio article").height('100%').css({'position':'relative', 'bottom': '0'});
 		$("#trio .data p").html(json['data']);

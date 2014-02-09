@@ -18,7 +18,7 @@
 			<p></p>
 		</div>
 		<div id="project-slideshow">
-			<!-- <div id="project-image-summary"></div> -->
+			<ul id="slides"></ul>
 		</div>
 	</section>
 	<section id="trio">
@@ -44,7 +44,6 @@
 <script>
 	$(document).ready(function() {
 		build_project( window.location.hash.replace( "#", "" ) );
-		 // build_project('ejn'); //hard-coded
 	});
 </script>
 </body>

@@ -140,6 +140,7 @@ function mini_portfolio()
 {
 	$.getJSON( "php/get_portfolio.php?l=short", function( json )
 	{
+		console.log( json );
 		var count = 0;
 		for( var i = 0; count < Math.min( 10, json.length ); i++ )
 		{
@@ -148,12 +149,12 @@ function mini_portfolio()
 				$( "#mini-portfolio" ).append(
 					$( document.createElement( 'div' ) )
 						.addClass( "mini-portfolio" )
-						.attr( "id", 'mini-port-'+i )
+						.attr( "id", 'mini-port-' + i )
 						.html( "<p><strong>" + json[ i ].title + "</strong> - " + json[ i ].client + "<br /><em>" + json[ i ].tag + "</em></p>" )
 						.prepend(
 							$( document.createElement( 'div' ) )
 								.addClass( "mini-image" )
-								.css( "background-image", "url( media/icon/" + json[ i ].id + ".png" )
+								.css( "background-image", "url( media/icon/" + json[ i ].id + ".png )" )
 						)
 				);
 				count++;

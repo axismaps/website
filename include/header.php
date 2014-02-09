@@ -8,9 +8,9 @@
 			<label for="body" style="float:left">How can we help you?</label>
 			<textarea id="body"></textarea>
 			<!-- <label for="name">Your name: </label> -->
-			<input type="text" id="name" value="name"><br>
+			<input type="text" id="name" value="Full Name"><br>
 			<!-- <label for="email">Your email: </label> -->
-			<input type="email" id="email" value="janedoe@email.com"><br>
+			<input type="email" id="email" value="Email Address"><br>
 			<input type="submit" value="Submit" id="submit">
 			<a href="#" id="cancel_contact">Cancel</a>
 		</form>

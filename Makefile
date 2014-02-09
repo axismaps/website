@@ -26,4 +26,4 @@ copy-html:
 	php php/make_images.php
 	php php/load_projects.php
 	cp portfolio.sqlite $(build-dir)portfolio.sqlite
-	cp -r media $(build-dir)media
+	cp -r media $(build-dir)

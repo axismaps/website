@@ -245,8 +245,8 @@ img#init {
 }
 #sidebar h4 {
 	text-transform: uppercase;
-	margin-top: 35px;
-	padding-top: 25px;
+	margin-top: 15px;
+	padding-top: 15px;
 	border-top: 1px solid #ccc;
 }
 #sidebar h4.no-border{
@@ -776,7 +776,8 @@ p.more span{
 		background:url(../images/histogram.png) right top no-repeat;
 	}
 	#sidebar > div {
-		width: 45%;
+		width: 42%;
+		margin: 0 4%;
 		float: left;
 	}
 	.ribbon{
@@ -785,8 +786,9 @@ p.more span{
 }
 @media (min-width: 800px) and (max-width: 975px) {
 	#sidebar > div {
-		width: 32%;
+		width: 30%;
 		float: left;
+		margin: 0 1.5%;
 	}
 }
 @media (max-width: 975px) {

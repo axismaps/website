@@ -322,7 +322,7 @@ footer p:last-child {
 	box-shadow: 2px 0px 3px rgba(0,0,0,0.25);
 }
 .ribbon {
-	height: 50px;
+	line-height: 50px;
 	color: white;
 	text-indent: 40px;
 	font: 21px / 52px "chaparral-pro", sans-serif;
@@ -687,14 +687,17 @@ p.more span{
 	}
 	nav ul {
 		display: none;
-		padding: 0;
+		padding: 0 0 10px 0;
 		line-height: 40px;
 	}
 	nav ul li {
 		display: block;
+		padding-left: 15px;
+		margin: 5px 10px;
 	}
 	.mini-portfolio { 
 		width: 100%;
+		margin: 20px 0;
 	}
 	#trio article article {
 		width: 95%;
@@ -703,6 +706,18 @@ p.more span{
 	}
 	#sidebar > div {
 		width: 100%;
+	}
+	.ribbon{
+		text-indent: 0;
+		padding: 10px;
+		line-height: 1.5em;
+	}
+	#sidebar h2 {
+		display: block;
+		width: 100% !important;
+	}
+	#build{
+		line-height: 52px;
 	}
 
 }
@@ -741,7 +756,9 @@ p.more span{
 	#axis-summary p {
 		padding: 0 4% 0 4%;
 	}
-
+	.ribbon{
+		font-size: 18px;
+	}
 }
 @media (min-width: 521px) and (max-width: 800px) {
 	#trio article article {
@@ -761,6 +778,9 @@ p.more span{
 	#sidebar > div {
 		width: 45%;
 		float: left;
+	}
+	.ribbon{
+		text-indent: 10px;
 	}
 }
 @media (min-width: 800px) and (max-width: 975px) {
@@ -784,13 +804,13 @@ p.more span{
 		display: block; 
 		clear: both;
 	}
-	.ribbon {
-		/*height: 100%;*/
+	#slideshow{
+		width: 100%;
 	}
 	#sidebar {
 		width: 96%;
 		float: none;
-		padding: 0 2%;
+		padding: 0 2% 25px;
 		background: #fff;
 		clear: left;
 		display: table;

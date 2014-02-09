@@ -164,63 +164,21 @@ nav #menu {
 nav #menu:hover {
 	cursor: pointer;
 }
-/* SLIDESHOW */
+/* SLIDESHOWS */
+img#init {
+	position: absolute; /* just let the slides underneath float up to top */
+}
 #slideshow{
 	overflow: hidden;
 	height: 305px;
-	border-bottom: 1px solid #93928c;
-}
-
-#slides{
-	position: relative;
-	bottom: 310px;
-	left: 975px;
 	width: 975px;
-}
-
-#slideshow #vignette{
+	border-bottom: 1px solid #93928c;
 	position: relative;
-	bottom: 310px;
-	z-index: 1;
-	display: block;
-	height: 305px;
-	-webkit-box-shadow: inset 0px -2px 3px rgba(0,0,0,0.25);
-	-moz-box-shadow: inset 0px -2px 3px rgba(0,0,0,0.25);
-	box-shadow: inset 0px -2px 3px rgba(0,0,0,0.25);
 }
-
-.slide{
-	display: block;
-	margin-bottom: -305px;
-	height: 305px;
-	 -webkit-transition: margin-left 500ms ease-in;
-     -moz-transition: margin-left 500ms ease-in;
-     -ms-transition: margin-left 500ms ease-in;
-     -o-transition: margin-left 500ms ease-in;
-     transition: margin-left 500ms ease-in;
-}
-
-.slide.shown{
-	margin-left: -975px;
-}
-
-.slide .title{
-	position: relative;
-	top: -40px;
-	display: none;
-	margin-bottom: -40px;
-	height: 40px;
-	background-color: rgba( 0,0,0,0.75);
-	color: white;
-	text-indent: 20px;
-	font-weight: bold;
-	line-height: 40px;
-}
-
 #controls{
-	position: relative;
+	position: absolute;
 	right: 20px;
-	bottom: 40px;
+	bottom: 0;
 	z-index: 2;
 	display: none;
 	float: right;
@@ -233,11 +191,43 @@ nav #menu:hover {
 	-ms-user-select: none;      
 	user-select: none;
 }
+#slides .title{
+	position: relative;
+	display: none;
+	top: -40px;
+	height: 40px;
+	background-color: rgba( 0,0,0,0.75);
+	color: white;
+	text-indent: 20px;
+	font-weight: bold;
+	line-height: 40px;
+}
 #controls span:first-child{ 
 	margin-right: 20px; 
 }
 #controls .disabled{
 	color: #666;
+}
+#project-slideshow {
+	width: 642px;
+	height: 520px;
+    position: relative;
+    float: right;
+	overflow: hidden;
+	box-shadow: -6px 0px 5px -5px #999;
+}
+#slides {
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+#slides li {
+    list-style-type: none;
+    position: absolute;
+    left: 102%;
+}
+#slides li:first-child {
+    left: 0;
 }
 
 /* SIDEBAR */
@@ -347,9 +337,13 @@ footer p:last-child {
 	font-style: italic;
 }
 #trio {
-	display: table;
 	height: 100%;
 	background: #fff;
+}
+#trio:after {
+	content: '';
+	display: block;
+	clear: both;
 }
 #trio article {
 	position: relative;
@@ -603,6 +597,7 @@ footer p:last-child {
 /* PROJECT */
 #project-featured {
 	background: #fff;
+	padding-bottom: 8px;
 
 }
 #project-featured h2 span {

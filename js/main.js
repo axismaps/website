@@ -147,9 +147,10 @@ function mini_portfolio()
 			if( json[ i ].featured )
 			{
 				$( "#mini-portfolio" ).append(
-					$( document.createElement( 'div' ) )
+					$( document.createElement( 'a' ) )
 						.addClass( "mini-portfolio" )
 						.attr( "id", 'mini-port-' + i )
+						.attr( "href", "project.php#" + json[ i ].id )
 						.html( "<p><strong>" + json[ i ].title + "</strong> - " + json[ i ].client + "<br /><em>" + json[ i ].tag + "</em></p>" )
 						.prepend(
 							$( document.createElement( 'div' ) )

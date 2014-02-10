@@ -485,6 +485,7 @@ p.more span{
 	width: 40%;
 	height: 70px;
 	cursor: pointer;
+	text-decoration: none;
 }
 
 .mini-portfolio:hover{

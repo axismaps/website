@@ -761,6 +761,17 @@ p.more span{
 	.ribbon{
 		font-size: 18px;
 	}
+	#slides li{
+		position: static;
+	}
+	.project-image-summary{
+		position: static;
+		width: 96%;
+		padding: 5px 2%;
+	}
+	#project-slideshow{
+		height: auto;
+	}
 }
 @media (min-width: 521px) and (max-width: 800px) {
 	#trio article article {
@@ -828,5 +839,22 @@ p.more span{
 		content: "";
 		display: block; 
 		clear: both;
+	}
+	#project-summary{
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		float: none;
+	}
+	#project-summary > *{
+		padding: 0 40px;
+	}
+	#project-slideshow{
+		margin: 0 auto;
+		float: none;
+		max-width: 100%;
+	}
+	#project-slideshow *{
+		max-width: 100%;
 	}
 }

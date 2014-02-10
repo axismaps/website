@@ -8,7 +8,7 @@
 	}
 	else
 	{
-		$query = 'SELECT id, title, client, tag, featured FROM projects';
+		$query = 'SELECT id, title, client, tag, featured, intro FROM projects NATURAL JOIN content';
 	}
 	
 	$query .= ' ORDER BY featured DESC, DATE DESC';

@@ -4,7 +4,7 @@
 
 	include_once 'db_connect.php';
 	include_once 'Parsedown.php';
-	
+
 	//adding feature text
 	echo( "\nLoading feature text:\n" );
 	$files = scandir( dirname(__FILE__) . '/../data/text/highlighted/' );
@@ -92,5 +92,21 @@
 			}
 			echo( "\n" );
 		}
+	}
+
+	//adding portfolio briefs
+	echo( "\nLoading portfolio briefs:\n" );
+	$text = file_get_contents( dirname(__FILE__) . "/../data/text/portfolio_brief.md" );
+	$result = Parsedown::instance()->parse( $text );
+	
+	$ids = array();
+	$text = array();
+	preg_match_all( "/(?<=\\<h2\\>).*(?=\\<\\/h2\\>)/u", $result, $ids );
+	preg_match_all("/(?<=\\<p\\>).*(?=\\<\\/p\\>)/u", $result, $text );
+	
+	foreach( $ids[ 0 ] as $i => $id )
+	{
+		$db->query( "INSERT OR REPLACE INTO content ( id, intro ) VALUES( '" . $id . "', '" . SQLite3::escapeString( $text[ 0 ][ $i ] ) . "')" );
+		echo( "   $id\n" );
 	}
 ?>

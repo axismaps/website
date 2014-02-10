@@ -359,7 +359,7 @@ function build_project( id )
 				.append( $( document.createElement( 'img' ) ).attr( 'src', 'media/features/' + json.id + '/' + i + '.png' ) )
 				.append( $( document.createElement( 'div' ) )
 					.addClass( 'project-image-summary' )
-					.append( '<p><strong>' + json.features[ i ][ 'title' ] + '</strong> ' + json.features[ i ][ 'text' ] + '</p>' )
+					.append( '<p><strong>' + json.features[ i ][ 'title' ] + '</strong> - ' + json.features[ i ][ 'text' ] + '</p>' )
 				)
 			);
 		}

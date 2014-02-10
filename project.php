@@ -12,7 +12,7 @@
 <?php include('include/header.php'); ?>
 <?php include('include/nav.php'); ?>
 	<section id='project-featured'>
-		<h2 class='ribbon'><span id="next">Next &#62;</span><span id='prev'>&#60; Prev</span></h2>
+		<h2 class='ribbon'><!-- <span id="next">Next &#62;</span><span id='prev'>&#60; Prev</span> --></h2>
 		<div id='project-summary'>
 			<h3></h3>
 			<p></p>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Axis Maps LLC Portfolio - Cartography. Visualization. Design.</title>
+	<title>Axis Maps Portfolio - Cartography. Visualization. Design.</title>
 	<meta name="description" content="Axis Maps Data Design Code">
 	<?php include('include/meta.php'); ?>
 </head>

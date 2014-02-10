@@ -65,7 +65,7 @@
 						<p>Before we became designers and developers, we were trained as cartographers. Now, we bring the traditions of our field to the Web. We custom-build each map to match your data, visual identity, message, and audience.</p>
 					</section>
 					<section id="mini-portfolio">
-						<h2 class='ribbon'>We've had the pleasure of working with:</h2>
+						<h2 class='ribbon'>Designed &amp; Built by Axis Maps:</h2>
 						<div id='mini_portfolio'></div>
 					</section>
 				</div><!-- end main-content -->

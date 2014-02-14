@@ -1,17 +1,8 @@
 ## aihc
-a
-
-## c2es
-a
-
-## census
-a
-
-## urban4m
-a
+For this map, we worked with Adam Matthew Digital editorial staff and researches at the Newberry Library to create a series of maps to provide students a broad overivew of the history and culture of Native Americans. The maps were designed and produced as static maps and then exported to SVG where D3 creates simple interactivity like panning / zooming and data probing. Each map integrates with images from the AIHC collection and entries from the interactive chronology.
 
 ## election2012
-a
+In the two days following the 2012 election, we made an interactive map to explore the relationship between demographics and election results. The map uses a technique called value-by-alpha, which is a bivariate choropleth map that "equalizes" a base map so that the visual weight of a map unit corresponds to a data value. For example, in the population map counties with lower populations are less visually prominent while counties with high populations remain brightly colored, giving a more accurately weighted picture of the country than a map showing a sea of red in sparsely populated areas.
 
 ## mapc
 We worked with the Boston region's Metropolitan Area Planning Council to design a set of Massachusetts basemap tiles for use in their various web maps. The multiscale map is designed to be distinctive yet neutral, providing reference information but not distracting from data overlays. It was designed in TileMill using state GIS data, and the styles and tiles are freely available from the MAPC.

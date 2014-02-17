@@ -55,7 +55,7 @@
 							<p><strong>Open-source:</strong> We are proud to use open-source mapping libraries in our projects.</p>
 						</article>
 					</section>
-					<section id="axis-summary" class='clear-left'>
+					<section class='axis-summary clear-left'>
 						<h2 class='ribbon'>Interactive. Data-driven. Cartographically sound.</h2>
 						<h3>The power of interactive maps</h3>
 						<p>Unlike simple tables, charts, and graphs, maps show your data in spatial context. Interactive maps add a set of powerful mapping tools that engage your audience in new ways.</p>

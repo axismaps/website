@@ -459,19 +459,29 @@ p.more span{
 	color: #1A1A1A;
     font: 15px/20px "pt-sans",sans-serif;
 }
-#axis-summary{
+.axis-summary{
 	padding-bottom: 41px;
 	background: url(../images/screenshot.png) right bottom no-repeat;
 }
 
-#axis-summary h3 {
+#history{
+	background: white url(../images/madison.jpg) right center repeat-y;
+	padding-bottom: 25px;
+	margin-bottom: 25px;
+}
+
+#bios img{
+	width: 100%;
+}
+
+.axis-summary h3 {
 	margin: 30px 0 -10px;
 	padding-left: 4%;
 	font-weight: normal;
 	font-size: 21px;
 	color: #404040;
 }
-#axis-summary p {
+.axis-summary p {
 	padding: 0 280px 0 4%;
 }
 
@@ -744,11 +754,11 @@ p.more span{
 	#trio article article p {
 
 	}
-	#axis-summary {
+	.axis-summary, #history {
 		background: none;
 		padding-bottom: 20px;
 	}
-	#axis-summary p {
+	.axis-summary p {
 		padding: 0 4% 0 4%;
 	}
 	.ribbon{

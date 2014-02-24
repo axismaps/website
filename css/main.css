@@ -34,7 +34,7 @@ hr {
 	clear: both;
 }
 
-#container{
+#wrapper{
 	max-width: 975px;
 	margin: 0 auto 10px;
 	/*background-color: #fbf9ed;*/
@@ -859,12 +859,12 @@ p.more span{
 }
 @media (max-width: 975px) {
 
-	#container {
+	#wrapper {
 		width: 90%;
 		margin: 0 auto;
 	}
 	#main-content {
-		width: 100%;
+		width: 100% !important;
 		box-shadow: none;
 	}
 	#main-content:after {

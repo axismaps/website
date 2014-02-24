@@ -8,7 +8,7 @@
 		<?php include('include/meta.php'); ?>
 	</head>
 	<body>
-		<div id='container'>
+		<div id='wrapper'>
 			<?php include('include/header.php'); ?>
 			<?php include('include/nav.php'); ?>
 			<section id="trio">
@@ -64,7 +64,7 @@
 			</section>
 			<div style="clear:both"></div>
 			<?php include('include/footer.php'); ?>
-		</div><!-- end container -->
+		</div><!-- end wrapper -->
 		<script src="js/jquery.js"></script>
 		<script src="js/main.js"></script>
 	</body>

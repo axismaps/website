@@ -671,29 +671,41 @@ p.more span{
 	color: white;
 }
 
+#trio ul{
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+#trio ul li::before{
+	content: "- ";
+}
+
 .headshot{
-	height: 70px;
-	width: 70px;
-	border-radius: 50%;
+	background-color: #eee;
+	background-size: contain;
+	background-position-y: center;
+	background-repeat: no-repeat;
+	margin: 20px -20px 0;
+	padding-left: 50px;
+	overflow: hidden;
+	height: 65px;
+}
+
+.headshot h3{
+	text-indent: 0 !important;
+	margin: 0 !important;
+}
+
+.headshot img{
 	float: left;
-	background-size: cover;
-	margin: 15px -50px 0 0;
+	height: 65px;
+	left: 0;
+	opacity: 0.25;
 }
 
-.headshot + h3{
-	text-indent: 0;
-}
-
-#andy .headshot{
-	background-image: url(../images/andy.jpg);
-}
-
-#ben .headshot{
-	background-image: url(../images/ben.jpg);
-}
-
-#dave .headshot{
-	background-image: url(../images/dave.jpg);
+.headshot + p{
+	margin: 15px 0 5px -15px;
 }
 
 @media (max-width: 520px) {
@@ -781,7 +793,7 @@ p.more span{
 
 	}
 	.axis-summary, #history {
-		background: none;
+		background-image: none;
 		padding-bottom: 20px;
 	}
 	.axis-summary p {

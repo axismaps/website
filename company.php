@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Axis Maps Portfolio - Cartography. Visualization. Design.</title>
+		<title>Axis Maps Company - Cartography. Visualization. Design.</title>
 		<meta name="description" content="Axis Maps Data Design Code">
 		<?php include('include/meta.php'); ?>
 	</head>
@@ -14,30 +14,42 @@
 			<section id="trio">
 				<h2 class="ribbon">We are Axis Maps:</h2>
 				<article id="dave" style="height:auto">
-					<div class="headshot"></div>
-					<h3>Dave</h3>
+					<div class="headshot">
+						<img src="images/dave.png" alt="dave" style="margin-left:-85px">
+						<h3>Dave</h3>
+						<b>Managing Director</b>
+					</div>
+					<p><a href="mailto:dave@axismaps.com">David Heyman</a></p>
 					<ul>
-						<li>Managing Director</li>
-						<li>Development backup</li>
+						<li>Client relations</li>
+						<li>On-deck developer</li>
 						<li>Chief organizer</li>
 					</ul>
 				</article>
 				<article id="ben" style="height:auto">
-					<div class="headshot"></div>
-					<h3>Ben</h3>
+					<div class="headshot">
+						<img src="images/ben.png" alt="ben" style="margin-left:-90px">
+						<h3>Ben</h3>
+						<b>Design Lead</b>
+					</div>
+					<p><a href="mailto:ben@axismaps.com">Dr. Benjamin Sheesley:</a></p>
 					<ul>
-						<li>UI and map designer</li>
-						<li>Map store coordinator</li>
+						<li>Map &amp; UI designer</li>
+						<li>Shipping magnate</li>
 						<li>Stickler for details</li>
 					</ul>
 				</article>
 				<article id="andy" style="height:auto">
-					<div class="headshot"></div>
-					<h3>Andy</h3>
+					<div class="headshot">
+						<img src="images/andy.png" alt="andy" style="margin-left:-68px">
+						<h3>Andy</h3>
+						<b>Development Lead</b>
+					</div>
+					<p><a href="mailto:andy@axismaps.com">Andrew Woodruff:</a></p>
 					<ul>
-						<li>Lead developer</li>
+						<li>Head coder</li>
 						<li>Cartographic stalwart</li>
-						<li>Academic cartography ambassador</li>
+						<li>Academic ambassador</li>
 				</article>
 			</section>
 			<img src="images/map.jpg" style="width:100%" />
@@ -48,6 +60,7 @@
 				<p>Since then, we’ve been pleased to work with a diverse range of companies including : Navteq, Embassy of Canada, Commonwealth Fund, Bank of America, Etihad Airways, Emirates Airlines, Hearst Publishing, IPRO, and The New York Times.</p>
 				<p>Our work has been written about and featured in: The Boston Globe, The Atlantic, Gizmodo, Fast Company, and Directions Magazine.</p>
 				<p>After 8 years, our company has grown to include more than just custom interactive maps. In the Spring of 2010, we launched indiemapper (http://indiemapper.com), our first commercial product to help people make better maps. We designed and built indiemapper because we were frustrated with the existing mapping tools and wanted to bring the best practices of cartographic design to the 21st century mapping workflow. More recently, we’ve returned to our roots in manual cartography producing a series of city-posters that accurately depict the streets of a city using nothing but type (http://store.axismaps.com). By weaving together thousands of words, a full picture of the city emerges. Every letter was carefully placed, taking hundreds of hours to complete for each map.</p>
+				<div style="clear:both"></div>
 			</section>
 			<div style="clear:both"></div>
 			<?php include('include/footer.php'); ?>

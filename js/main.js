@@ -140,7 +140,6 @@ function mini_portfolio()
 {
 	$.getJSON( "php/get_portfolio.php?l=short", function( json )
 	{
-		console.log( json );
 		var count = 0;
 		for( var i = 0; count < Math.min( 10, json.length ); i++ )
 		{

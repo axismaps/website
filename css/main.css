@@ -217,7 +217,7 @@ img#init {
 	box-shadow: -6px 0px 5px -5px #999;
 }
 #slides {
-	height: 310px;
+	height: 305px;
     padding: 0;
     margin: 0;
     position: relative;
@@ -235,8 +235,8 @@ img#init {
 	content: "";
 	width: 100%;
 	height: 100%;
-	background-image: url(../images/vignette.png);
-	background-size: contain;
+	-webkit-box-shadow:inset 0 -2px 4px 0 rgba(0,0,0,0.2);
+	box-shadow:inset 0 -2px 4px 0 rgba(0,0,0,0.2);
 	z-index: 9;
 	display: block;
 	position: absolute;

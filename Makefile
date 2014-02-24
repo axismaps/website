@@ -5,6 +5,7 @@ html-prereq =		index.php \
 					company.php \
 					portfolio.php \
 					project.php \
+					favicon.ico \
 
 dir-prereq =		images \
 					include \

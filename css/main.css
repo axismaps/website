@@ -670,6 +670,32 @@ p.more span{
 	bottom: 0;
 	color: white;
 }
+
+.headshot{
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	float: left;
+	background-size: cover;
+	margin: 15px -50px 0 0;
+}
+
+.headshot + h3{
+	text-indent: 0;
+}
+
+#andy .headshot{
+	background-image: url(../images/andy.jpg);
+}
+
+#ben .headshot{
+	background-image: url(../images/ben.jpg);
+}
+
+#dave .headshot{
+	background-image: url(../images/dave.jpg);
+}
+
 @media (max-width: 520px) {
 	.logo {
 		width: 70%;

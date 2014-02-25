@@ -231,7 +231,7 @@ img#init {
     left: 0;
 }
 
-#slides::before{
+#slideshow #slides::before{
 	content: "";
 	width: 100%;
 	height: 100%;

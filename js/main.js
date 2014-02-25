@@ -169,6 +169,7 @@ function mini_portfolio()
 
 function build_slideshow( json )
 {
+	if( $( window ).width() < 520 ) return false;
 	// first create a duplicate of the initial slide and add it to our slideshow list
 	$("#slides").append(
 		$( document.createElement( 'li' ) )

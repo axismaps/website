@@ -322,14 +322,10 @@ function build_portfolio()
 			}
 			else
 			{
-				$( "#all" ).append(
-					$( document.createElement( 'div' ) )
-						.addClass( "all" )
-						.html( "<p><b>" + json[ i ].title + "</b> - <i>" + json[ i ].client + "</i><br /><br />" + json[ i ].intro + "</p>" )
-						.prepend(
-							$( document.createElement( 'img' ) ).attr( "src", "php/get_image.php?id=" + json[ i ].id + "&w=815&h=255" )
-						)
-				);
+				var all = $( document.createElement( 'div' ) ).addClass( "all" ).html( "<p><b>" + json[ i ].title + "</b> - <i>" + json[ i ].client + "</i><br /><br />" + json[ i ].intro + "</p>" );
+				if( json[ i ].url ) all.append( '<a href="' + json[ i ].url + '" target="_blank"><b>View the map &nbsp;-&gt;</b></a>' );
+				all.prepend( $( document.createElement( 'img' ) ).attr( "src", "php/get_image.php?id=" + json[ i ].id + "&w=815&h=255" ) );
+				$( "#all" ).append( all );
 			}
 		}
 		

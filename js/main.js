@@ -351,7 +351,8 @@ function build_project( id )
 		$( "#project-featured h2" ).prepend( json[ 'title' ] );
 		$( "#project-summary h3" ).html( json[ 'tag' ] );
 		$( "#project-summary p" ).html( json[ 'intro' ] );
-
+		if( json[ 'url' ] ) $( "#project-summary p" ).append( '<br /><br /><a href="' + json[ 'url' ] + '" target="_blank"><b>View the map &nbsp;-&gt;</b></a>' );
+		
 		// build slideshow structure
 		for ( var i = 0; i < json.features.length; i++ )
 		{

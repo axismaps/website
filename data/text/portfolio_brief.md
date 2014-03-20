@@ -40,8 +40,5 @@ This Google Maps mashup was built for Death's Door Spirits to help visitors to t
 ## border
 Popular Mechanics contacted Axis Maps to produce a map to be featured in their 4-page spread for their article titled: 'Fixing the U.S. Border Fence' in their August, 2010 issue. This map shows the location and condition of the U.S. / Mexico border fence and was designed around the page-layout and graphic style of both the article and issue.
 
-## sitra
-This map was produced for Sitra, the Finnish Innovation Fund, to allow their graphic designers to quickly add thematic information to an attractive basemap. We used the Fuller projection, placing Finland at the center of the map.
-
 ## arboretum
 The University of Wisconsin Arboretum map was built with the central focus of engaging users who use the arboretum for everything from research to recreation. Users can add their own content to the map by uploading photos to Flickr or recording their experiences in Google My Maps. Researchers and arboretum staff can add their own research to the map through data managed and maintained by the arboretum staff through a flexible interface designed by Axis Maps that allows for a wide range of styling and even map animation.

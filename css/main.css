@@ -45,7 +45,7 @@ hr {
 }
 #header:after {
 	content: "";
-	display: block; 
+	display: block;
 	clear: both;
 }
 #build, #contact #submit{
@@ -186,9 +186,9 @@ img#init {
 	font-size: 16px;
 	line-height: 40px;
 	cursor: pointer;
-	-webkit-user-select: none;  
-	-moz-user-select: none;    
-	-ms-user-select: none;      
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 }
 #slides .title{
@@ -202,8 +202,8 @@ img#init {
 	font-weight: bold;
 	line-height: 40px;
 }
-#controls span:first-child{ 
-	margin-right: 20px; 
+#controls span:first-child{
+	margin-right: 20px;
 }
 #controls .disabled{
 	color: #666;
@@ -322,7 +322,7 @@ footer p:last-child {
 }
 #main:after{
 	content: "";
-	display: block; 
+	display: block;
 	clear: both;
 }
 #main-content{
@@ -462,7 +462,7 @@ p.more span{
 	background: url(../images/charts.png) right top no-repeat;
 }
 #explanations article.design {
-	background:url(../images/dymax.png) right top no-repeat;
+	background:url(../images/map.png) right top no-repeat;
 }
 #explanations article.code {
 	background:url(../images/histogram.png) right top no-repeat;
@@ -550,7 +550,7 @@ p.more span{
 }
 #featured:after, #featured ul:after {
 	content: "";
-	display: block; 
+	display: block;
 	clear: both;
 }
 #featured ul li {
@@ -577,7 +577,7 @@ p.more span{
 #featured ul li p a{
 	text-decoration: none;
 	color: #005C7A;
-	
+
 }
 #featured ul li p a:hover {
 	color: #333;
@@ -637,7 +637,7 @@ p.more span{
 }
 #project-featured:after {
 	content: "";
-	display: block; 
+	display: block;
 	clear: both;
 }
 #project-featured h3 {
@@ -747,7 +747,7 @@ p.more span{
 		padding-left: 15px;
 		margin: 5px 10px;
 	}
-	.mini-portfolio { 
+	.mini-portfolio {
 		width: 100%;
 		margin: 20px 0;
 	}
@@ -783,7 +783,7 @@ p.more span{
 	}
 	#build em, #contact form em {
 		display: none;
-	}	
+	}
 	input#name, input#email {
 		width: 94%;
 		margin-left: 0;
@@ -836,7 +836,7 @@ p.more span{
 		background: url(../images/charts.png) right top no-repeat;
 	}
 	#trio article article.design {
-		background:url(../images/dymax.png) right top no-repeat;
+		background:url(../images/map.png) right top no-repeat;
 	}
 	#trio article article.code {
 		background:url(../images/histogram.png) right top no-repeat;
@@ -869,7 +869,7 @@ p.more span{
 	}
 	#main-content:after {
 		content: "";
-		display: block; 
+		display: block;
 		clear: both;
 	}
 	#slideshow{
@@ -890,7 +890,7 @@ p.more span{
 	}
 	#sidebar:after {
 		content: "";
-		display: block; 
+		display: block;
 		clear: both;
 	}
 	#project-summary{

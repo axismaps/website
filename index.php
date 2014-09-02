@@ -8,6 +8,7 @@
 		<?php include('include/meta.php'); ?>
 	</head>
 	<body>
+		<?php include('include/ga.php'); ?>
 		<div id='wrapper'>
 			<?php include('include/header.php'); ?>
 			<div id='slideshow'>

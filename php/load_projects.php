@@ -7,11 +7,12 @@
 	
 	//adding projects from CSV
 	echo( "\nLoading projects from CSV:\n" );
+	$db->query( "DELETE FROM projects" );
 	$csv = csv_to_array( '../data/text/projects.csv' );
 	
 	foreach( $csv as $row )
 	{	
-		$query = 'INSERT OR REPLACE INTO projects ';
+		$query = 'INSERT INTO projects ';
 		$cols = '( ';
 		$vals = ' VALUES (';
 		

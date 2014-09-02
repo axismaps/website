@@ -1,3 +1,18 @@
+## ekuatorial
+We worked with Earth Journalism to produce the cartography for their Ekuatorial Indonesia environmental journalism project. The cartographic design of the basemaps blend seamlessly with their site design and considerable work was done manipulating messy data from multiple sources to create meaningful maps to accompany the news stories.
+
+## esri_color
+We worked with ESRI to develop an internal color-browser as a test bed for introducing new color schemes to ArcGIS Online. Over 75 custom color schemes were designed for use with thematic data on several built-in basemaps of different styles. The browser allows users to page through thematic map types, see the results mapped to a test dataset, and view a color ramp breakdown with color specifications.
+
+## million_hearts
+This small health-care visualization built for the state of New York focuses on performance measures of physician practices. The data points needed to be sufficiently anonymized and were placed on random points on a fixed grid within a set radius from their actual location. Users can view multiple performance measures and a data table showing total performance for each practice.
+
+## archives_direct
+This small map was built as an interactive visual gateway to the Archives Direct collection. The user is greeted with an animated spinning globe (orthographic projection) that transforms into a Mollweide projected map on click. The map is linked to a list to allow for quick navigation and multiple sections can be made before submitting the results to a document search.
+
+## wwi_chron
+This chronology was built to display entries where fine temporal resolution and narrative flow were the most important. It supports multiple temporal resolutions and date ranges to tell the complex story of the First World War. Data is stored via CSV and can easily be deployed by editorial staff. This chronology supports filtering and boolean searching to quickly narrow down hundreds of entries.
+
 ## aihc
 For this map, we worked with Adam Matthew Digital editorial staff and researches at the Newberry Library to create a series of maps to provide students a broad overivew of the history and culture of Native Americans. The maps were designed and produced as static maps and then exported to SVG where D3 creates simple interactivity like panning / zooming and data probing. Each map integrates with images from the AIHC collection and entries from the interactive chronology.
 

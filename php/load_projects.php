@@ -4,6 +4,38 @@
 
 	include_once 'db_connect.php';
 	include_once 'Parsedown.php';
+	
+	//adding projects from CSV
+	echo( "\nLoading projects from CSV:\n" );
+	$csv = csv_to_array( '../data/text/projects.csv' );
+	
+	foreach( $csv as $row )
+	{	
+		$query = 'INSERT OR REPLACE INTO projects ';
+		$cols = '( ';
+		$vals = ' VALUES (';
+		
+		foreach( $row as $key => $value )
+		{
+			if( $value != '' )
+			{
+				$cols .= $key . ', ';
+				if( $key == 'featured' )
+				{
+					$vals .= $value . ', ';
+				}
+				else
+				{
+					$vals .= "'" . SQLite3::escapeString( $value ) . "', ";
+				}
+			}
+		}
+		
+		$query .= substr( $cols, 0, -2 ) . " )" . substr( $vals, 0, -2 ) . " )";
+		$db->query( $query );
+		$title = $row[ 'title' ];
+		echo( "   $title\n" );
+	}
 
 	//adding feature text
 	echo( "\nLoading feature text:\n" );
@@ -20,7 +52,7 @@
 			
 			$id = preg_replace( "/\\.md$/u", "", $f );
 			
-			$query = "INSERT OR REPLACE INTO content ( id, intro, data, design, code ) VALUES( '" . $id . "', '" . SQLite3::escapeString( $matches[ 0 ][ 0 ] ) . "', '" . SQLite3::escapeString( $matches[ 0 ][ 1 ] ) . "', '" . SQLite3::escapeString( $matches[ 0 ][ 2 ] ) . "', '" . SQLite3::escapeString( $matches[ 0 ][ 3 ] ) . "' )";
+			$query = "INSERT OR REPLACE INTO content ( id, intro, data, design, code ) VALUES ( '" . $id . "', '" . SQLite3::escapeString( $matches[ 0 ][ 0 ] ) . "', '" . SQLite3::escapeString( $matches[ 0 ][ 1 ] ) . "', '" . SQLite3::escapeString( $matches[ 0 ][ 2 ] ) . "', '" . SQLite3::escapeString( $matches[ 0 ][ 3 ] ) . "' )";
 			
 			$db->query( $query );
 			
@@ -109,4 +141,24 @@
 		$db->query( "INSERT OR REPLACE INTO content ( id, intro ) VALUES( '" . $id . "', '" . SQLite3::escapeString( $text[ 0 ][ $i ] ) . "')" );
 		echo( "   $id\n" );
 	}
+	
+	function csv_to_array( $filename='', $delimiter=',' )
+    {
+        if( !file_exists( $filename ) || !is_readable( $filename ) ) return false;
+
+        $header = NULL;
+        $data = array();
+        if( ( $handle = fopen( $filename, 'r' ) ) !== FALSE )
+        {
+            while( ( $row = fgetcsv( $handle, 1000, $delimiter ) ) !== FALSE )
+            {
+                if( !$header )
+                    $header = $row;
+                else
+                    $data[] = array_combine( $header, $row );
+            }
+            fclose( $handle );
+        }
+        return $data;
+    }
 ?>

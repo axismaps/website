@@ -1,3 +1,6 @@
+## gas_leaks
+The Conservation Law Foundation hired us to build a map as a part of their ongoing outreach projects regarding natural gas leaks in Massachusetts. We built a narrative interactive graphic that covers 3 aspects of the natural gas problem: safety, the environment, and cost. The graphic combines maps and graphs along with text, images, and video produced by CLF. The maps were created in Leaflet from data scraped from mountains of PDF legal filings.
+
 ## ekuatorial
 We worked with Earth Journalism to produce the cartography for their Ekuatorial Indonesia environmental journalism project. The cartographic design of the basemaps blend seamlessly with their site design and considerable work was done manipulating messy data from multiple sources to create meaningful maps to accompany the news stories.
 

@@ -1,13 +1,14 @@
-# Global Commodities Chronology
+# Global Commodities Oil Visualization
 
 ## Overview
-This chronology is the centerpiece of both the Global Commodities and Empire Online projects. The primary goal was to create an engaging way to get students to interact with chronological information. The map pulls short entries from a database covering thousands years organized by category and tag.
+This map was an addendum to the Global Commodites project covering oil (and other sources of energy), arguably the most important commodity of the modern era. It was designed to be accessible to a novice audience, unfamiliar with interactive graphics. An auto-rotating globe is the centerpiece of the applicaiton and links to bar charts for comparison amongst countries and line charts to comapre over time.
 
 ## Data
-The primary challenge with this dataset was working with over 3,000 entries and balancing load speed with the browser limitations of dynamically rendering each entry as a block. By working with the client before they started their extensive data collection process, we were able to arrive at a suitable compromise between the data they wanted to collect and the technical constraints of the project.	
+The data for this map was taken from the [BP Statistical Review of World Energy and Historical Datasets](http://www.bp.com/en/global/corporate/about-bp/energy-economics/statistical-review-of-world-energy.html). There was a considerable amount of pre-processing conducted on the data to get it from Excel into a MySQL database linked by two-letter country codes. We brought in an external historical population dataset to be able to calculate historical per capita usage on-the-fly.
 
 ## Design
-First and foremost, the chronology needed to be visually engaging to get students clicking and exploring. Since Adam Matthew had a great collection of images to accompany the entries, we wanted to feature the images to draw users in. There was a tricky balance between showing relative time and presenting the entries in an easy-to-use manner. The compromise was to place non-adjacent years next to each other and use the histogram to give an idea of relative time.
+This design centered around presenting the globe, chart, timeline, and energy details in a clear and easy-to-use interface. Each component is linked to the others so that the whole display responds to user input. To keep the interface simple, content is prioritized for some areas of the display. For example, the timeline swaps out for energy details when mousing over the map. Energy types are color-coded per country with corresponding colors in the user interface help keep oriented. Detailed areas in Europe and the Middle East transition smoothly to larger scale flat maps.
+
 
 ## Code
-The chronology renders each square dynamically, calculating it's size based on the content length and the presense of the image. Priority is given to entries with images, which shrinks the other entries. The biggest challenge was writing this positioning Javascript to run acceptably in IE8.
+This map was built using D3 which makes the orthographic projection used for the globe possible. The data bindings in D3 made it very easy to link the 3 graphic elements together so interacting with the bar chart rotates the globe and changes the display on the line graph. All classification schemes and y-axis scaling is done dynamically to compensate for huge differences in quantities and unites between the different energy datasets.

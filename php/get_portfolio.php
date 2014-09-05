@@ -4,7 +4,7 @@
 	
 	if( $_GET[ 'l' ] == "short" )
 	{
-		$query = 'SELECT id, IFNULL( title_short, title ) AS title, IFNULL( client_short, client) AS client, tag, featured FROM projects';
+		$query = 'SELECT id, IFNULL( title_short, title ) AS title, IFNULL( client_short, client) AS client, tag, featured, slideshow FROM projects';
 	}
 	else
 	{

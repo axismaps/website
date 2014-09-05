@@ -180,14 +180,17 @@ function build_slideshow( json )
 	$("#init").remove();  // and remove the original initial slide
 	for( var i = 0; i < json.length; i++ )
 	{
-		$( "#slides" )
-			.append( $( document.createElement( 'li' ) )
-			.append( $( document.createElement( 'img' ) ).attr( 'src', 'media/slideshow/' + json[ i ].id + '.png' ) )
-			.append( $( document.createElement( 'div' ) )
-				.addClass( "title" )
-				.html( json[ i ].title )
-			)
-		);
+		if( json[ i ].slideshow )
+		{
+			$( "#slides" )
+				.append( $( document.createElement( 'li' ) )
+				.append( $( document.createElement( 'img' ) ).attr( 'src', 'media/slideshow/' + json[ i ].id + '.png' ) )
+				.append( $( document.createElement( 'div' ) )
+					.addClass( "title" )
+					.html( json[ i ].title )
+				)
+			);
+		}
 	}
 
 	slideshow( json.length, '#slideshow' );  // start slideshow magic

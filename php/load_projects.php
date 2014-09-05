@@ -8,7 +8,7 @@
 	//adding projects from CSV
 	echo( "\nLoading projects from CSV:\n" );
 	$db->query( "DELETE FROM projects" );
-	$csv = csv_to_array( '../data/text/projects.csv' );
+	$csv = csv_to_array( 'data/text/projects.csv' );
 	
 	foreach( $csv as $row )
 	{	

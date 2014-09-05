@@ -1,8 +1,8 @@
-## Smooth animation
-Symbols grow and shrink using smooth transition to emphasize change
+### Smooth animation
+Symbols grow and shrink using smooth transitions to emphasize change
 
-## Fast data probe
+### Fast data probe
 Mouse-over a point to get exact values
 
-## Functional timeline
+### Functional timeline
 Drag, click or just play the animation

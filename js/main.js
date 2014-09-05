@@ -328,15 +328,6 @@ function build_portfolio()
 				$( "#all" ).append( all );
 			}
 		}
-		
-		$( "#more-work a" ).click( function( e )
-		{
-			e.preventDefault();
-			$( "#more-work a" ).fadeOut( 'fast', function()
-			{
-				$( "#all" ).slideDown();
-			});
-		})
 	});
 }
 

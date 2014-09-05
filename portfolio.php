@@ -15,9 +15,10 @@
 			<section id='featured'>
 				<h2 class='ribbon'>Featured Maps | <span class="soft">See our previous projects and how they were made:</span></h2>
 				<ul></ul>
-				<p id="more-work"><a href='#'>View more of our work</a></p>
 			</section>
-			<section id="all"></section>
+			<section id="all">
+				<h2 class='ribbon'>Additional projects</h2>
+			</section>
 			<?php include('include/footer.php'); ?>
 		</div><!-- end wrapper -->
 		<script src="js/jquery.js"></script>

@@ -605,9 +605,12 @@ p.more span{
 	transition: color .3s;
 }
 #all{
-	display: none;
-	padding: 0 80px;
+	padding: 40px 80px;
 	background-color: white;
+}
+
+#all .ribbon{
+	margin: 0 -80px 40px;
 }
 
 .all{

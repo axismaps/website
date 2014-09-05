@@ -24,7 +24,7 @@ copy-dir: ; $(foreach dir,$(dir-prereq),rsync -rupE --delete --exclude=".svn*" $
 copy-html: 
 	@rm -f $(html-replace)
 	$(foreach html,$(html-prereq),cp $(html) $(build-dir)$(html) && ) :
-	php php/make_images.php
 	php php/load_projects.php
+	php php/make_images.php
 	cp portfolio.sqlite $(build-dir)portfolio.sqlite
 	cp -r media $(build-dir)

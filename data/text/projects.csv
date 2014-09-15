@@ -1,6 +1,6 @@
 id,title,title_short,client,client_short,tag,date,featured,slideshow,url
-prices,Global Commodities Prices Visualization,Prices Visualization,Adam Matthew Digital,AMD,"1,000 years of commodity prices",2012-10-26,1,1,
-chronology,Empires Online Chronology,EO Chronology,Adam Matthew Digital,AMD,Getting students to interact with history,2012-07-11,1,1,
+prices,Global Commodities Prices Visualization,Prices Visualization,Adam Matthew Digital,AMD,"1,000 years of commodity prices",2012-10-26,1,1,http://resources.amdigital.co.uk/gc/price/
+chronology,Empires Online Chronology,EO Chronology,Adam Matthew Digital,AMD,Getting students to interact with history,2012-07-11,1,1,http://resources.amdigital.co.uk/gc/time/
 climatecommons,Climate Commons,,Earth Journalism Network,EJN,Climate data meets climate journalism,2013-04-03,1,1,http://climatecommons.earthjournalism.net/map/
 vilnius,Exploring the Vilnius Ghetto,The Vilnius Ghetto,reVilna,,A digital monument to the Jewish ghetto,2013-05-03,1,1,http://revilna.org
 wntb,Why Not the Best?,,IPRO,,Mapping ever-changing hospital data,2013-04-25,1,1,http://whynotthebest.org/map/
@@ -24,7 +24,7 @@ revolt,Slave Revolt in Jamaica,,Harvard History Design Studio,Harvard,Slave insu
 brandeis,American Jewish Population Map,American Jewish Population,Brandeis University,Brandeis,Nationwide population study,2013-09-27,1,1,http://ajpp.brandeis.edu
 musqueam,Musqueam Place Names Map,Place Names Map,Musqueam Indian Band,Musqueam,Preserving language and heritage,2013-04-24,1,1,
 cap,Mapping Pacific Voyages,,Adam Matthew Digital,AMD,Animating historic sea voyages,2013-11-21,1,1,
-oil,Global Commodities Oil Visualization,Oil Visualization,Adam Matthew Digital,AMD,Revealing the globe's energy history,2013-06-15,1,1,
+oil,Global Commodities Oil Visualization,Oil Visualization,Adam Matthew Digital,AMD,Revealing the globe's energy history,2013-06-15,1,1,http://resources.amdigital.co.uk/gc/oil/
 election2012,Shedding Light on Election Demographics - 2012,Election 2012,Axis Maps,,,2012-11-09,0,1,http://www.axismaps.com/election2012/
 aihc,American Indian History and Culture,American Indian,Adam Matthew Digital,AMD,,2013-09-22,0,1,
 wwi_chron,World War I Chronology,WWI Chronology,Adam Matthew Digital,AMD,,2014-06-26,0,1,

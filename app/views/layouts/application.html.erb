@@ -3,15 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Axis Maps - Cartography. Visualization. Design.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Axis Maps Data Design Code">
+		<title>Axis Maps - Cartography. Visualization. Design.</title>
+		
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+    
+    <script type="text/javascript" src="//use.typekit.net/elt3stf.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
   <body>
-
-  <%= yield %>
+    <%= render "shared/ga" %>
+    
+    <div id="wrapper">
+      <%= yield %>
+    </div>
 
   </body>
 </html>

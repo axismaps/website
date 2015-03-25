@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325140319) do
+ActiveRecord::Schema.define(version: 20150325180522) do
 
   create_table "clients", force: true do |t|
     t.string   "name"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20150325140319) do
   end
 
   create_table "projects", force: true do |t|
-    t.string   "record",     null: false
-    t.string   "title",      null: false
+    t.string   "record",      null: false
+    t.string   "title",       null: false
     t.string   "tag"
     t.date     "date"
     t.boolean  "featured"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150325140319) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title_short"
   end
 
 end

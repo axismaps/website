@@ -11,6 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150325135854) do
+
+  create_table "projects", force: true do |t|
+    t.string   "record",     null: false
+    t.string   "title",      null: false
+    t.string   "tag"
+    t.date     "date"
+    t.boolean  "featured"
+    t.boolean  "slideshow"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

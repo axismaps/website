@@ -441,13 +441,13 @@ p.more span{
 }
 
 #trio h3.data:before {
-	background-image: url(../images/data_home.png);
+	background-image: image-url( 'data_home.png' );
 }
 #trio h3.design:before {
-	background-image: url(../images/design_home.png);
+	background-image: image-url( 'design_home.png' );
 }
 #trio h3.code:before {
-	background-image: url(../images/code_home.png);
+	background-image: image-url( 'code_home.png' );
 }
 
 .explain .horizontal:hover .expand{
@@ -459,13 +459,13 @@ p.more span{
 	padding: 20px 140px 20px 4%;
 }
 #explanations article.data {
-	background: url(../images/charts.png) right top no-repeat;
+	background: image-url( 'charts.png' ) right top no-repeat;
 }
 #explanations article.design {
-	background:url(../images/map.png) right top no-repeat;
+	background: image-url( 'map.png' ) right top no-repeat;
 }
 #explanations article.code {
-	background:url(../images/histogram.png) right top no-repeat;
+	background: image-url( 'histogram.png' ) right top no-repeat;
 }
 #explanations article p {
 	color: #1A1A1A;
@@ -473,7 +473,7 @@ p.more span{
 }
 .axis-summary{
 	padding-bottom: 41px;
-	background: url(../images/screenshot.png) right bottom no-repeat;
+	background: image-url( 'screenshot.png' ) right bottom no-repeat;
 }
 
 #history{

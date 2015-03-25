@@ -1,7 +1,8 @@
-<%= @slides %>
 <div id='slideshow'>
   <div id='controls'><span id='prev'>&#9664;</span><span id='next'>&#9654;</span></div>
     <ul id='slides'>
-      
+      <% @slides.each do |slide| %>
+        <li><%= image_tag( "slideshow/" + slide[ :record ] + ".png" ) %><div class="title"><%= slide[ :title ] %></div></li>
+      <% end %>
     </ul>
 </div>

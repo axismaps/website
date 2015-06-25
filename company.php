@@ -14,7 +14,7 @@
 			<?php include('include/nav.php'); ?>
 			<section id="trio">
 				<h2 class="ribbon">We are Axis Maps:</h2>
-				<article id="dave" style="height:auto">
+				<article id="dave" style="height:auto; width: 42%">
 					<div class="headshot">
 						<img src="images/dave.png" alt="dave" style="margin-left:-85px">
 						<h3>Dave</h3>
@@ -27,7 +27,7 @@
 						<li>Chief organizer</li>
 					</ul>
 				</article>
-				<article id="ben" style="height:auto">
+				<article id="ben" style="height:auto; width: 42%">
 					<div class="headshot">
 						<img src="images/ben.png" alt="ben" style="margin-left:-90px">
 						<h3>Ben</h3>
@@ -40,7 +40,7 @@
 						<li>Stickler for details</li>
 					</ul>
 				</article>
-				<article id="andy" style="height:auto">
+				<article id="andy" style="height:auto; width: 42%">
 					<div class="headshot">
 						<img src="images/andy.png" alt="andy" style="margin-left:-68px">
 						<h3>Andy</h3>
@@ -51,6 +51,18 @@
 						<li>Head coder</li>
 						<li>Cartographic stalwart</li>
 						<li>Academic ambassador</li>
+				</article>
+				<article id="josh" style="height:auto; width: 42%">
+					<div class="headshot">
+						<img src="images/josh.png" alt="josh" style="margin-left:-68px">
+						<h3>Josh</h3>
+						<b>Developer</b>
+					</div>
+					<p><a href="mailto:josh@axismaps.com">Joshua Ryan:</a></p>
+					<ul>
+						<li>Full stack coder</li>
+            <li>Bug squasher</li>
+            <li>Asian cartography aficionado</li>
 				</article>
 			</section>
 			<img src="images/map.jpg" style="width:100%" />
